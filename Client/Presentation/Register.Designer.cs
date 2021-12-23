@@ -59,34 +59,35 @@ namespace Client.Presentation
             this.Name = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.button2 = new System.Windows.Forms.Button();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.textBox11 = new System.Windows.Forms.TextBox();
+            this.Child_Protector = new System.Windows.Forms.ComboBox();
+            this.UploadAvatarChild = new System.Windows.Forms.Button();
+            this.Child_Avatar = new System.Windows.Forms.PictureBox();
+            this.Child_Class = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.radioButton3 = new System.Windows.Forms.RadioButton();
             this.radioButton4 = new System.Windows.Forms.RadioButton();
-            this.textBox13 = new System.Windows.Forms.TextBox();
+            this.Child_School = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
-            this.textBox16 = new System.Windows.Forms.TextBox();
+            this.Child_Phone = new System.Windows.Forms.TextBox();
             this.label17 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
-            this.textBox17 = new System.Windows.Forms.TextBox();
+            this.Child_Email = new System.Windows.Forms.TextBox();
             this.label19 = new System.Windows.Forms.Label();
-            this.textBox18 = new System.Windows.Forms.TextBox();
+            this.Child_Birth = new System.Windows.Forms.TextBox();
             this.label20 = new System.Windows.Forms.Label();
-            this.textBox19 = new System.Windows.Forms.TextBox();
+            this.Child_User_Name = new System.Windows.Forms.TextBox();
             this.label21 = new System.Windows.Forms.Label();
-            this.textBox20 = new System.Windows.Forms.TextBox();
+            this.Child_Name = new System.Windows.Forms.TextBox();
             this.label22 = new System.Windows.Forms.Label();
+            this.SignupChild = new System.Windows.Forms.Button();
             this.UserName.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Avatar)).BeginInit();
             this.Sex.SuspendLayout();
             this.tabPage2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Child_Avatar)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -365,25 +366,26 @@ namespace Client.Presentation
             // 
             // tabPage2
             // 
-            this.tabPage2.Controls.Add(this.comboBox1);
-            this.tabPage2.Controls.Add(this.button2);
-            this.tabPage2.Controls.Add(this.pictureBox2);
-            this.tabPage2.Controls.Add(this.textBox11);
+            this.tabPage2.Controls.Add(this.SignupChild);
+            this.tabPage2.Controls.Add(this.Child_Protector);
+            this.tabPage2.Controls.Add(this.UploadAvatarChild);
+            this.tabPage2.Controls.Add(this.Child_Avatar);
+            this.tabPage2.Controls.Add(this.Child_Class);
             this.tabPage2.Controls.Add(this.label12);
             this.tabPage2.Controls.Add(this.label13);
             this.tabPage2.Controls.Add(this.groupBox2);
-            this.tabPage2.Controls.Add(this.textBox13);
+            this.tabPage2.Controls.Add(this.Child_School);
             this.tabPage2.Controls.Add(this.label14);
-            this.tabPage2.Controls.Add(this.textBox16);
+            this.tabPage2.Controls.Add(this.Child_Phone);
             this.tabPage2.Controls.Add(this.label17);
             this.tabPage2.Controls.Add(this.label18);
-            this.tabPage2.Controls.Add(this.textBox17);
+            this.tabPage2.Controls.Add(this.Child_Email);
             this.tabPage2.Controls.Add(this.label19);
-            this.tabPage2.Controls.Add(this.textBox18);
+            this.tabPage2.Controls.Add(this.Child_Birth);
             this.tabPage2.Controls.Add(this.label20);
-            this.tabPage2.Controls.Add(this.textBox19);
+            this.tabPage2.Controls.Add(this.Child_User_Name);
             this.tabPage2.Controls.Add(this.label21);
-            this.tabPage2.Controls.Add(this.textBox20);
+            this.tabPage2.Controls.Add(this.Child_Name);
             this.tabPage2.Controls.Add(this.label22);
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
@@ -393,37 +395,37 @@ namespace Client.Presentation
             this.tabPage2.Text = "Đăng Ký Cho Trẻ Em";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
-            // comboBox1
+            // Child_Protector
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(114, 213);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(233, 21);
-            this.comboBox1.TabIndex = 52;
+            this.Child_Protector.FormattingEnabled = true;
+            this.Child_Protector.Location = new System.Drawing.Point(114, 213);
+            this.Child_Protector.Name = "Child_Protector";
+            this.Child_Protector.Size = new System.Drawing.Size(233, 21);
+            this.Child_Protector.TabIndex = 52;
             // 
-            // button2
+            // UploadAvatarChild
             // 
-            this.button2.Location = new System.Drawing.Point(605, 10);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 51;
-            this.button2.Text = "Upload Ảnh";
-            this.button2.UseVisualStyleBackColor = true;
+            this.UploadAvatarChild.Location = new System.Drawing.Point(605, 10);
+            this.UploadAvatarChild.Name = "UploadAvatarChild";
+            this.UploadAvatarChild.Size = new System.Drawing.Size(75, 23);
+            this.UploadAvatarChild.TabIndex = 51;
+            this.UploadAvatarChild.Text = "Upload Ảnh";
+            this.UploadAvatarChild.UseVisualStyleBackColor = true;
             // 
-            // pictureBox2
+            // Child_Avatar
             // 
-            this.pictureBox2.Location = new System.Drawing.Point(499, 10);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(100, 107);
-            this.pictureBox2.TabIndex = 50;
-            this.pictureBox2.TabStop = false;
+            this.Child_Avatar.Location = new System.Drawing.Point(499, 10);
+            this.Child_Avatar.Name = "Child_Avatar";
+            this.Child_Avatar.Size = new System.Drawing.Size(100, 107);
+            this.Child_Avatar.TabIndex = 50;
+            this.Child_Avatar.TabStop = false;
             // 
-            // textBox11
+            // Child_Class
             // 
-            this.textBox11.Location = new System.Drawing.Point(499, 177);
-            this.textBox11.Name = "textBox11";
-            this.textBox11.Size = new System.Drawing.Size(232, 20);
-            this.textBox11.TabIndex = 48;
+            this.Child_Class.Location = new System.Drawing.Point(499, 177);
+            this.Child_Class.Name = "Child_Class";
+            this.Child_Class.Size = new System.Drawing.Size(232, 20);
+            this.Child_Class.TabIndex = 48;
             // 
             // label12
             // 
@@ -475,12 +477,12 @@ namespace Client.Presentation
             this.radioButton4.Text = "Nam";
             this.radioButton4.UseVisualStyleBackColor = true;
             // 
-            // textBox13
+            // Child_School
             // 
-            this.textBox13.Location = new System.Drawing.Point(499, 137);
-            this.textBox13.Name = "textBox13";
-            this.textBox13.Size = new System.Drawing.Size(232, 20);
-            this.textBox13.TabIndex = 43;
+            this.Child_School.Location = new System.Drawing.Point(499, 137);
+            this.Child_School.Name = "Child_School";
+            this.Child_School.Size = new System.Drawing.Size(232, 20);
+            this.Child_School.TabIndex = 43;
             // 
             // label14
             // 
@@ -491,12 +493,12 @@ namespace Client.Presentation
             this.label14.TabIndex = 44;
             this.label14.Text = "Trường Học";
             // 
-            // textBox16
+            // Child_Phone
             // 
-            this.textBox16.Location = new System.Drawing.Point(115, 177);
-            this.textBox16.Name = "textBox16";
-            this.textBox16.Size = new System.Drawing.Size(232, 20);
-            this.textBox16.TabIndex = 37;
+            this.Child_Phone.Location = new System.Drawing.Point(115, 177);
+            this.Child_Phone.Name = "Child_Phone";
+            this.Child_Phone.Size = new System.Drawing.Size(232, 20);
+            this.Child_Phone.TabIndex = 37;
             // 
             // label17
             // 
@@ -516,12 +518,12 @@ namespace Client.Presentation
             this.label18.TabIndex = 36;
             this.label18.Text = "Giới Tính";
             // 
-            // textBox17
+            // Child_Email
             // 
-            this.textBox17.Location = new System.Drawing.Point(115, 141);
-            this.textBox17.Name = "textBox17";
-            this.textBox17.Size = new System.Drawing.Size(232, 20);
-            this.textBox17.TabIndex = 34;
+            this.Child_Email.Location = new System.Drawing.Point(115, 141);
+            this.Child_Email.Name = "Child_Email";
+            this.Child_Email.Size = new System.Drawing.Size(232, 20);
+            this.Child_Email.TabIndex = 34;
             // 
             // label19
             // 
@@ -532,12 +534,12 @@ namespace Client.Presentation
             this.label19.TabIndex = 35;
             this.label19.Text = "Email";
             // 
-            // textBox18
+            // Child_Birth
             // 
-            this.textBox18.Location = new System.Drawing.Point(115, 101);
-            this.textBox18.Name = "textBox18";
-            this.textBox18.Size = new System.Drawing.Size(232, 20);
-            this.textBox18.TabIndex = 32;
+            this.Child_Birth.Location = new System.Drawing.Point(115, 101);
+            this.Child_Birth.Name = "Child_Birth";
+            this.Child_Birth.Size = new System.Drawing.Size(232, 20);
+            this.Child_Birth.TabIndex = 32;
             // 
             // label20
             // 
@@ -548,12 +550,12 @@ namespace Client.Presentation
             this.label20.TabIndex = 33;
             this.label20.Text = "Ngày Sinh";
             // 
-            // textBox19
+            // Child_User_Name
             // 
-            this.textBox19.Location = new System.Drawing.Point(115, 61);
-            this.textBox19.Name = "textBox19";
-            this.textBox19.Size = new System.Drawing.Size(232, 20);
-            this.textBox19.TabIndex = 30;
+            this.Child_User_Name.Location = new System.Drawing.Point(115, 61);
+            this.Child_User_Name.Name = "Child_User_Name";
+            this.Child_User_Name.Size = new System.Drawing.Size(232, 20);
+            this.Child_User_Name.TabIndex = 30;
             // 
             // label21
             // 
@@ -564,12 +566,12 @@ namespace Client.Presentation
             this.label21.TabIndex = 31;
             this.label21.Text = "Tên Đăng Nhập";
             // 
-            // textBox20
+            // Child_Name
             // 
-            this.textBox20.Location = new System.Drawing.Point(115, 20);
-            this.textBox20.Name = "textBox20";
-            this.textBox20.Size = new System.Drawing.Size(232, 20);
-            this.textBox20.TabIndex = 28;
+            this.Child_Name.Location = new System.Drawing.Point(115, 20);
+            this.Child_Name.Name = "Child_Name";
+            this.Child_Name.Size = new System.Drawing.Size(232, 20);
+            this.Child_Name.TabIndex = 28;
             // 
             // label22
             // 
@@ -580,12 +582,23 @@ namespace Client.Presentation
             this.label22.TabIndex = 29;
             this.label22.Text = "Tên Người dùng";
             // 
+            // SignupChild
+            // 
+            this.SignupChild.Location = new System.Drawing.Point(227, 314);
+            this.SignupChild.Name = "SignupChild";
+            this.SignupChild.Size = new System.Drawing.Size(345, 32);
+            this.SignupChild.TabIndex = 53;
+            this.SignupChild.Text = "Đăng Ký ";
+            this.SignupChild.UseVisualStyleBackColor = true;
+            this.SignupChild.Click += new System.EventHandler(this.SignupChild_Click);
+            // 
             // Register
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(809, 380);
             this.Controls.Add(this.UserName);
+            this.Name = "Register";
             this.Text = "Form1";
             this.UserName.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
@@ -595,7 +608,7 @@ namespace Client.Presentation
             this.Sex.PerformLayout();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Child_Avatar)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
@@ -633,29 +646,30 @@ namespace Client.Presentation
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Button UploadAvatar;
         private System.Windows.Forms.PictureBox Avatar;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.TextBox textBox11;
+        private System.Windows.Forms.ComboBox Child_Protector;
+        private System.Windows.Forms.Button UploadAvatarChild;
+        private System.Windows.Forms.PictureBox Child_Avatar;
+        private System.Windows.Forms.TextBox Child_Class;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.RadioButton radioButton3;
         private System.Windows.Forms.RadioButton radioButton4;
-        private System.Windows.Forms.TextBox textBox13;
+        private System.Windows.Forms.TextBox Child_School;
         private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.TextBox textBox16;
+        private System.Windows.Forms.TextBox Child_Phone;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.TextBox textBox17;
+        private System.Windows.Forms.TextBox Child_Email;
         private System.Windows.Forms.Label label19;
-        private System.Windows.Forms.TextBox textBox18;
+        private System.Windows.Forms.TextBox Child_Birth;
         private System.Windows.Forms.Label label20;
-        private System.Windows.Forms.TextBox textBox19;
+        private System.Windows.Forms.TextBox Child_User_Name;
         private System.Windows.Forms.Label label21;
-        private System.Windows.Forms.TextBox textBox20;
+        private System.Windows.Forms.TextBox Child_Name;
         private System.Windows.Forms.Label label22;
         private System.Windows.Forms.Button SignupAdult;
+        private System.Windows.Forms.Button SignupChild;
     }
 }
 

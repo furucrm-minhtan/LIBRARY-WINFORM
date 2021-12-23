@@ -40,6 +40,24 @@ namespace Client.Presentation
             Console.WriteLine("Tạo Tài Khoản Thất Bại");
         }
 
+        private void SignupChild_Click(object sender, EventArgs e)
+        {
+            ChildDTO data = getAdultDataOnForm();
+
+            try
+            {
+                if (bus.store(data))
+                {
+                    Console.WriteLine("Tạo Tài Khoản Thành Công");
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            Console.WriteLine("Tạo Tài Khoản Thất Bại");
+        }
+
         private AdultDTO getAdultDataOnForm()
         {
             AdultDTO reader = new AdultDTO();

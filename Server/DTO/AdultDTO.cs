@@ -9,7 +9,8 @@ using Server.Core.Provider;
 
 namespace Server.DTO
 {
-	public class AdultDTO : ReaderDTO {
+	public class AdultDTO : ReaderDTO 
+	{
 		public string Id { get; set; }
 		public string IssuedPlace { get; set; }
 		public string Job { get; set; }

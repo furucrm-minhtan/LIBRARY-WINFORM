@@ -9,7 +9,8 @@ using Server.Core.Provider;
 
 namespace Server.DTO
 {
-    public class ReaderDTO {
+    public class ReaderDTO 
+	{
 		public string MADG { get; set; }
 		public string DisplayName { get; set; }
 		public string UserName { get; set; }
