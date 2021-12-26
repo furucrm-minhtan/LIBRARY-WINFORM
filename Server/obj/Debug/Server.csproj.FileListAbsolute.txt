@@ -30,4 +30,3 @@ C:\Users\Tan\source\repos\Project_PTUDCSDL\Server\obj\Debug\Server.csproj.CoreCo
 C:\Users\Tan\source\repos\Project_PTUDCSDL\Server\obj\Debug\Server.csproj.CopyComplete
 C:\Users\Tan\source\repos\Project_PTUDCSDL\Server\obj\Debug\Server.exe
 C:\Users\Tan\source\repos\Project_PTUDCSDL\Server\obj\Debug\Server.pdb
-C:\Users\Tan\source\repos\Project_PTUDCSDL\Server\obj\Debug\Server.csprojAssemblyReference.cache

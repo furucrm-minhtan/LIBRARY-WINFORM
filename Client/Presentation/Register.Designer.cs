@@ -52,43 +52,45 @@ namespace Client.Presentation
             this.label5 = new System.Windows.Forms.Label();
             this.Email = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.Birth_Date = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.User_Name = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.Name = new System.Windows.Forms.TextBox();
+            this.Display_Name = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.Child_Protector = new System.Windows.Forms.ComboBox();
+            this.SignupChild = new System.Windows.Forms.Button();
+            this.Protector = new System.Windows.Forms.ComboBox();
             this.UploadAvatarChild = new System.Windows.Forms.Button();
             this.Child_Avatar = new System.Windows.Forms.PictureBox();
-            this.Child_Class = new System.Windows.Forms.TextBox();
+            this.Class = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.Sex_Child = new System.Windows.Forms.GroupBox();
             this.radioButton3 = new System.Windows.Forms.RadioButton();
             this.radioButton4 = new System.Windows.Forms.RadioButton();
-            this.Child_School = new System.Windows.Forms.TextBox();
+            this.School = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
-            this.Child_Phone = new System.Windows.Forms.TextBox();
+            this.Phone_Child = new System.Windows.Forms.TextBox();
             this.label17 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
-            this.Child_Email = new System.Windows.Forms.TextBox();
+            this.Email_Child = new System.Windows.Forms.TextBox();
             this.label19 = new System.Windows.Forms.Label();
-            this.Child_Birth = new System.Windows.Forms.TextBox();
             this.label20 = new System.Windows.Forms.Label();
-            this.Child_User_Name = new System.Windows.Forms.TextBox();
+            this.User_Name_Child = new System.Windows.Forms.TextBox();
             this.label21 = new System.Windows.Forms.Label();
-            this.Child_Name = new System.Windows.Forms.TextBox();
+            this.Display_Name_Child = new System.Windows.Forms.TextBox();
             this.label22 = new System.Windows.Forms.Label();
-            this.SignupChild = new System.Windows.Forms.Button();
+            this.Birth_Date_Child = new System.Windows.Forms.DateTimePicker();
+            this.Birth_Date = new System.Windows.Forms.DateTimePicker();
+            this.Degree = new System.Windows.Forms.TextBox();
+            this.label15 = new System.Windows.Forms.Label();
             this.UserName.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Avatar)).BeginInit();
             this.Sex.SuspendLayout();
             this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Child_Avatar)).BeginInit();
-            this.groupBox2.SuspendLayout();
+            this.Sex_Child.SuspendLayout();
             this.SuspendLayout();
             // 
             // UserName
@@ -103,6 +105,9 @@ namespace Client.Presentation
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.Degree);
+            this.tabPage1.Controls.Add(this.label15);
+            this.tabPage1.Controls.Add(this.Birth_Date);
             this.tabPage1.Controls.Add(this.SignupAdult);
             this.tabPage1.Controls.Add(this.UploadAvatar);
             this.tabPage1.Controls.Add(this.Avatar);
@@ -122,11 +127,10 @@ namespace Client.Presentation
             this.tabPage1.Controls.Add(this.label5);
             this.tabPage1.Controls.Add(this.Email);
             this.tabPage1.Controls.Add(this.label4);
-            this.tabPage1.Controls.Add(this.Birth_Date);
             this.tabPage1.Controls.Add(this.label3);
             this.tabPage1.Controls.Add(this.User_Name);
             this.tabPage1.Controls.Add(this.label2);
-            this.tabPage1.Controls.Add(this.Name);
+            this.tabPage1.Controls.Add(this.Display_Name);
             this.tabPage1.Controls.Add(this.label1);
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
@@ -138,7 +142,7 @@ namespace Client.Presentation
             // 
             // SignupAdult
             // 
-            this.SignupAdult.Location = new System.Drawing.Point(216, 313);
+            this.SignupAdult.Location = new System.Drawing.Point(224, 336);
             this.SignupAdult.Name = "SignupAdult";
             this.SignupAdult.Size = new System.Drawing.Size(313, 33);
             this.SignupAdult.TabIndex = 1;
@@ -154,6 +158,7 @@ namespace Client.Presentation
             this.UploadAvatar.TabIndex = 27;
             this.UploadAvatar.Text = "Upload Ảnh";
             this.UploadAvatar.UseVisualStyleBackColor = true;
+            this.UploadAvatar.Click += new System.EventHandler(this.UploadAvatar_Click);
             // 
             // Avatar
             // 
@@ -316,13 +321,6 @@ namespace Client.Presentation
             this.label4.TabIndex = 8;
             this.label4.Text = "Email";
             // 
-            // Birth_Date
-            // 
-            this.Birth_Date.Location = new System.Drawing.Point(98, 97);
-            this.Birth_Date.Name = "Birth_Date";
-            this.Birth_Date.Size = new System.Drawing.Size(232, 20);
-            this.Birth_Date.TabIndex = 5;
-            // 
             // label3
             // 
             this.label3.AutoSize = true;
@@ -348,12 +346,12 @@ namespace Client.Presentation
             this.label2.TabIndex = 4;
             this.label2.Text = "Tên Đăng Nhập";
             // 
-            // Name
+            // Display_Name
             // 
-            this.Name.Location = new System.Drawing.Point(98, 16);
-            this.Name.Name = "Name";
-            this.Name.Size = new System.Drawing.Size(232, 20);
-            this.Name.TabIndex = 1;
+            this.Display_Name.Location = new System.Drawing.Point(98, 16);
+            this.Display_Name.Name = "Display_Name";
+            this.Display_Name.Size = new System.Drawing.Size(232, 20);
+            this.Display_Name.TabIndex = 1;
             // 
             // label1
             // 
@@ -366,26 +364,26 @@ namespace Client.Presentation
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.Birth_Date_Child);
             this.tabPage2.Controls.Add(this.SignupChild);
-            this.tabPage2.Controls.Add(this.Child_Protector);
+            this.tabPage2.Controls.Add(this.Protector);
             this.tabPage2.Controls.Add(this.UploadAvatarChild);
             this.tabPage2.Controls.Add(this.Child_Avatar);
-            this.tabPage2.Controls.Add(this.Child_Class);
+            this.tabPage2.Controls.Add(this.Class);
             this.tabPage2.Controls.Add(this.label12);
             this.tabPage2.Controls.Add(this.label13);
-            this.tabPage2.Controls.Add(this.groupBox2);
-            this.tabPage2.Controls.Add(this.Child_School);
+            this.tabPage2.Controls.Add(this.Sex_Child);
+            this.tabPage2.Controls.Add(this.School);
             this.tabPage2.Controls.Add(this.label14);
-            this.tabPage2.Controls.Add(this.Child_Phone);
+            this.tabPage2.Controls.Add(this.Phone_Child);
             this.tabPage2.Controls.Add(this.label17);
             this.tabPage2.Controls.Add(this.label18);
-            this.tabPage2.Controls.Add(this.Child_Email);
+            this.tabPage2.Controls.Add(this.Email_Child);
             this.tabPage2.Controls.Add(this.label19);
-            this.tabPage2.Controls.Add(this.Child_Birth);
             this.tabPage2.Controls.Add(this.label20);
-            this.tabPage2.Controls.Add(this.Child_User_Name);
+            this.tabPage2.Controls.Add(this.User_Name_Child);
             this.tabPage2.Controls.Add(this.label21);
-            this.tabPage2.Controls.Add(this.Child_Name);
+            this.tabPage2.Controls.Add(this.Display_Name_Child);
             this.tabPage2.Controls.Add(this.label22);
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
@@ -395,13 +393,23 @@ namespace Client.Presentation
             this.tabPage2.Text = "Đăng Ký Cho Trẻ Em";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
-            // Child_Protector
+            // SignupChild
             // 
-            this.Child_Protector.FormattingEnabled = true;
-            this.Child_Protector.Location = new System.Drawing.Point(114, 213);
-            this.Child_Protector.Name = "Child_Protector";
-            this.Child_Protector.Size = new System.Drawing.Size(233, 21);
-            this.Child_Protector.TabIndex = 52;
+            this.SignupChild.Location = new System.Drawing.Point(227, 314);
+            this.SignupChild.Name = "SignupChild";
+            this.SignupChild.Size = new System.Drawing.Size(345, 32);
+            this.SignupChild.TabIndex = 53;
+            this.SignupChild.Text = "Đăng Ký ";
+            this.SignupChild.UseVisualStyleBackColor = true;
+            this.SignupChild.Click += new System.EventHandler(this.SignupChild_Click);
+            // 
+            // Protector
+            // 
+            this.Protector.FormattingEnabled = true;
+            this.Protector.Location = new System.Drawing.Point(114, 213);
+            this.Protector.Name = "Protector";
+            this.Protector.Size = new System.Drawing.Size(233, 21);
+            this.Protector.TabIndex = 52;
             // 
             // UploadAvatarChild
             // 
@@ -411,6 +419,7 @@ namespace Client.Presentation
             this.UploadAvatarChild.TabIndex = 51;
             this.UploadAvatarChild.Text = "Upload Ảnh";
             this.UploadAvatarChild.UseVisualStyleBackColor = true;
+            this.UploadAvatarChild.Click += new System.EventHandler(this.UploadAvatar_Click);
             // 
             // Child_Avatar
             // 
@@ -420,12 +429,12 @@ namespace Client.Presentation
             this.Child_Avatar.TabIndex = 50;
             this.Child_Avatar.TabStop = false;
             // 
-            // Child_Class
+            // Class
             // 
-            this.Child_Class.Location = new System.Drawing.Point(499, 177);
-            this.Child_Class.Name = "Child_Class";
-            this.Child_Class.Size = new System.Drawing.Size(232, 20);
-            this.Child_Class.TabIndex = 48;
+            this.Class.Location = new System.Drawing.Point(499, 177);
+            this.Class.Name = "Class";
+            this.Class.Size = new System.Drawing.Size(232, 20);
+            this.Class.TabIndex = 48;
             // 
             // label12
             // 
@@ -445,15 +454,15 @@ namespace Client.Presentation
             this.label13.TabIndex = 47;
             this.label13.Text = "Người Bảo Hộ";
             // 
-            // groupBox2
+            // Sex_Child
             // 
-            this.groupBox2.Controls.Add(this.radioButton3);
-            this.groupBox2.Controls.Add(this.radioButton4);
-            this.groupBox2.Location = new System.Drawing.Point(115, 240);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(200, 55);
-            this.groupBox2.TabIndex = 45;
-            this.groupBox2.TabStop = false;
+            this.Sex_Child.Controls.Add(this.radioButton3);
+            this.Sex_Child.Controls.Add(this.radioButton4);
+            this.Sex_Child.Location = new System.Drawing.Point(115, 240);
+            this.Sex_Child.Name = "Sex_Child";
+            this.Sex_Child.Size = new System.Drawing.Size(200, 55);
+            this.Sex_Child.TabIndex = 45;
+            this.Sex_Child.TabStop = false;
             // 
             // radioButton3
             // 
@@ -477,12 +486,12 @@ namespace Client.Presentation
             this.radioButton4.Text = "Nam";
             this.radioButton4.UseVisualStyleBackColor = true;
             // 
-            // Child_School
+            // School
             // 
-            this.Child_School.Location = new System.Drawing.Point(499, 137);
-            this.Child_School.Name = "Child_School";
-            this.Child_School.Size = new System.Drawing.Size(232, 20);
-            this.Child_School.TabIndex = 43;
+            this.School.Location = new System.Drawing.Point(499, 137);
+            this.School.Name = "School";
+            this.School.Size = new System.Drawing.Size(232, 20);
+            this.School.TabIndex = 43;
             // 
             // label14
             // 
@@ -493,12 +502,12 @@ namespace Client.Presentation
             this.label14.TabIndex = 44;
             this.label14.Text = "Trường Học";
             // 
-            // Child_Phone
+            // Phone_Child
             // 
-            this.Child_Phone.Location = new System.Drawing.Point(115, 177);
-            this.Child_Phone.Name = "Child_Phone";
-            this.Child_Phone.Size = new System.Drawing.Size(232, 20);
-            this.Child_Phone.TabIndex = 37;
+            this.Phone_Child.Location = new System.Drawing.Point(115, 177);
+            this.Phone_Child.Name = "Phone_Child";
+            this.Phone_Child.Size = new System.Drawing.Size(232, 20);
+            this.Phone_Child.TabIndex = 37;
             // 
             // label17
             // 
@@ -518,12 +527,12 @@ namespace Client.Presentation
             this.label18.TabIndex = 36;
             this.label18.Text = "Giới Tính";
             // 
-            // Child_Email
+            // Email_Child
             // 
-            this.Child_Email.Location = new System.Drawing.Point(115, 141);
-            this.Child_Email.Name = "Child_Email";
-            this.Child_Email.Size = new System.Drawing.Size(232, 20);
-            this.Child_Email.TabIndex = 34;
+            this.Email_Child.Location = new System.Drawing.Point(115, 141);
+            this.Email_Child.Name = "Email_Child";
+            this.Email_Child.Size = new System.Drawing.Size(232, 20);
+            this.Email_Child.TabIndex = 34;
             // 
             // label19
             // 
@@ -534,13 +543,6 @@ namespace Client.Presentation
             this.label19.TabIndex = 35;
             this.label19.Text = "Email";
             // 
-            // Child_Birth
-            // 
-            this.Child_Birth.Location = new System.Drawing.Point(115, 101);
-            this.Child_Birth.Name = "Child_Birth";
-            this.Child_Birth.Size = new System.Drawing.Size(232, 20);
-            this.Child_Birth.TabIndex = 32;
-            // 
             // label20
             // 
             this.label20.AutoSize = true;
@@ -550,12 +552,12 @@ namespace Client.Presentation
             this.label20.TabIndex = 33;
             this.label20.Text = "Ngày Sinh";
             // 
-            // Child_User_Name
+            // User_Name_Child
             // 
-            this.Child_User_Name.Location = new System.Drawing.Point(115, 61);
-            this.Child_User_Name.Name = "Child_User_Name";
-            this.Child_User_Name.Size = new System.Drawing.Size(232, 20);
-            this.Child_User_Name.TabIndex = 30;
+            this.User_Name_Child.Location = new System.Drawing.Point(115, 61);
+            this.User_Name_Child.Name = "User_Name_Child";
+            this.User_Name_Child.Size = new System.Drawing.Size(232, 20);
+            this.User_Name_Child.TabIndex = 30;
             // 
             // label21
             // 
@@ -566,12 +568,12 @@ namespace Client.Presentation
             this.label21.TabIndex = 31;
             this.label21.Text = "Tên Đăng Nhập";
             // 
-            // Child_Name
+            // Display_Name_Child
             // 
-            this.Child_Name.Location = new System.Drawing.Point(115, 20);
-            this.Child_Name.Name = "Child_Name";
-            this.Child_Name.Size = new System.Drawing.Size(232, 20);
-            this.Child_Name.TabIndex = 28;
+            this.Display_Name_Child.Location = new System.Drawing.Point(115, 20);
+            this.Display_Name_Child.Name = "Display_Name_Child";
+            this.Display_Name_Child.Size = new System.Drawing.Size(232, 20);
+            this.Display_Name_Child.TabIndex = 28;
             // 
             // label22
             // 
@@ -582,21 +584,41 @@ namespace Client.Presentation
             this.label22.TabIndex = 29;
             this.label22.Text = "Tên Người dùng";
             // 
-            // SignupChild
+            // Birth_Date_Child
             // 
-            this.SignupChild.Location = new System.Drawing.Point(227, 314);
-            this.SignupChild.Name = "SignupChild";
-            this.SignupChild.Size = new System.Drawing.Size(345, 32);
-            this.SignupChild.TabIndex = 53;
-            this.SignupChild.Text = "Đăng Ký ";
-            this.SignupChild.UseVisualStyleBackColor = true;
-            this.SignupChild.Click += new System.EventHandler(this.SignupChild_Click);
+            this.Birth_Date_Child.Location = new System.Drawing.Point(114, 101);
+            this.Birth_Date_Child.Name = "Birth_Date_Child";
+            this.Birth_Date_Child.Size = new System.Drawing.Size(233, 20);
+            this.Birth_Date_Child.TabIndex = 54;
+            // 
+            // Birth_Date
+            // 
+            this.Birth_Date.Location = new System.Drawing.Point(98, 97);
+            this.Birth_Date.Name = "Birth_Date";
+            this.Birth_Date.Size = new System.Drawing.Size(233, 20);
+            this.Birth_Date.TabIndex = 55;
+            // 
+            // Degree
+            // 
+            this.Degree.Location = new System.Drawing.Point(482, 290);
+            this.Degree.Name = "Degree";
+            this.Degree.Size = new System.Drawing.Size(232, 20);
+            this.Degree.TabIndex = 56;
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(419, 293);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(54, 13);
+            this.label15.TabIndex = 57;
+            this.label15.Text = "Bằng Cấp";
             // 
             // Register
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(809, 380);
+            this.ClientSize = new System.Drawing.Size(809, 403);
             this.Controls.Add(this.UserName);
             this.Name = "Register";
             this.Text = "Form1";
@@ -609,8 +631,8 @@ namespace Client.Presentation
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Child_Avatar)).EndInit();
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
+            this.Sex_Child.ResumeLayout(false);
+            this.Sex_Child.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -620,9 +642,8 @@ namespace Client.Presentation
         private System.Windows.Forms.TabControl UserName;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.TabPage tabPage2;
-        private System.Windows.Forms.TextBox Name;
+        private System.Windows.Forms.TextBox Display_Name;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox Birth_Date;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox User_Name;
         private System.Windows.Forms.Label label2;
@@ -646,30 +667,33 @@ namespace Client.Presentation
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Button UploadAvatar;
         private System.Windows.Forms.PictureBox Avatar;
-        private System.Windows.Forms.ComboBox Child_Protector;
+        private System.Windows.Forms.ComboBox Protector;
         private System.Windows.Forms.Button UploadAvatarChild;
         private System.Windows.Forms.PictureBox Child_Avatar;
-        private System.Windows.Forms.TextBox Child_Class;
+        private System.Windows.Forms.TextBox Class;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.GroupBox Sex_Child;
         private System.Windows.Forms.RadioButton radioButton3;
         private System.Windows.Forms.RadioButton radioButton4;
-        private System.Windows.Forms.TextBox Child_School;
+        private System.Windows.Forms.TextBox School;
         private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.TextBox Child_Phone;
+        private System.Windows.Forms.TextBox Phone_Child;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.TextBox Child_Email;
+        private System.Windows.Forms.TextBox Email_Child;
         private System.Windows.Forms.Label label19;
-        private System.Windows.Forms.TextBox Child_Birth;
         private System.Windows.Forms.Label label20;
-        private System.Windows.Forms.TextBox Child_User_Name;
+        private System.Windows.Forms.TextBox User_Name_Child;
         private System.Windows.Forms.Label label21;
-        private System.Windows.Forms.TextBox Child_Name;
+        private System.Windows.Forms.TextBox Display_Name_Child;
         private System.Windows.Forms.Label label22;
         private System.Windows.Forms.Button SignupAdult;
         private System.Windows.Forms.Button SignupChild;
+        private System.Windows.Forms.DateTimePicker Birth_Date;
+        private System.Windows.Forms.DateTimePicker Birth_Date_Child;
+        private System.Windows.Forms.TextBox Degree;
+        private System.Windows.Forms.Label label15;
     }
 }
 

@@ -47,6 +47,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DTO\AdultDTO.cs" />
+    <Compile Include="DTO\ChildDTO.cs" />
+    <Compile Include="Utils\Validation.cs" />
+    <Compile Include="Utils\ValidationRule.cs" />
     <Compile Include="Presentation\Register.cs">
       <SubType>Form</SubType>
     </Compile>

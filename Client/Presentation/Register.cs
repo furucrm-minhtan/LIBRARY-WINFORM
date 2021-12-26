@@ -25,54 +25,83 @@ namespace Client.Presentation
         private void SignupAdult_Click(object sender, EventArgs e)
         {
             AdultDTO data = getAdultDataOnForm();
+            if (!data.validate())
+            {
+                return;
+            }
 
             try
             {
                 if(bus.store(data))
                 {
-                    Console.WriteLine("Tạo Tài Khoản Thành Công");
+                    MessageBox.Show("Tạo Tài Khoản Thành Công");
                 }
             }
             catch(Exception ex)
             {
                 Console.WriteLine(ex.Message);
             }
-            Console.WriteLine("Tạo Tài Khoản Thất Bại");
+            MessageBox.Show("Tạo Tài Khoản Thất Bại");
         }
 
         private void SignupChild_Click(object sender, EventArgs e)
         {
-            ChildDTO data = getAdultDataOnForm();
+            ChildDTO data = getChildDataOnForm();
 
             try
             {
                 if (bus.store(data))
                 {
-                    Console.WriteLine("Tạo Tài Khoản Thành Công");
+                    MessageBox.Show("Tạo Tài Khoản Thành Công");
                 }
             }
             catch (Exception ex)
             {
                 Console.WriteLine(ex.Message);
             }
-            Console.WriteLine("Tạo Tài Khoản Thất Bại");
+            CMessageBox.Show("Tạo Tài Khoản Thất Bại");
         }
 
         private AdultDTO getAdultDataOnForm()
         {
             AdultDTO reader = new AdultDTO();
-            reader.DisplayName = Name.Text;
+            reader.DisplayName = Display_Name.Text;
             reader.UserName = User_Name.Text;
             reader.Birth = Birth_Date.Text;
             reader.Email = Email.Text;
             reader.PhoneNumber = Phone.Text;
+            reader.Sex = Sex.Text;
             reader.Job = Job.Text;
             reader.Id = CMND.Text;
             reader.IssuedPlace = Issued_Place.Text;
             reader.Nation = Nation.Text;
             reader.Nationality = Nationality.Text;
+            reader.Degree = Degree.Text;
+            reader.Type = "Adult";
 
             return reader;
+        }
+
+        private ChildDTO getChildDataOnForm()
+        {
+            ChildDTO reader = new ChildDTO();
+            reader.DisplayName = Display_Name_Child.Text;
+            reader.UserName = User_Name_Child.Text;
+            reader.Birth = Birth_Date_Child.Text;
+            reader.Email = Email_Child.Text;
+            reader.Sex = Sex_Child.Text;
+            reader.PhoneNumber = Phone_Child.Text;
+            reader.School = School.Text;
+            reader.Class = Class.Text;
+            reader.Protector = Protector.SelectedValue.ToString();
+            reader.Type = "Child";
+
+            return reader;
+        }
+
+        private void UploadAvatar_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -1,4 +1,4 @@
-﻿using Client.Interface;
+﻿using Client.Utils;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,7 +10,7 @@ namespace Client.DTO
 {
     public class AdultDTO : Server.DTO.AdultDTO, Validation
     {
-        List<string> requiredFields;
+        List<string> requiredFields = new List<string> { "DisplayName", "UserName", "Birth", "Email", "PhoneNumber" };
         Dictionary<string, ValidationRule> validationRule = new Dictionary<string, ValidationRule>()
         {
             { "DisplayName", new ValidationRule { length = 255 } },
@@ -27,7 +27,7 @@ namespace Client.DTO
         
         public bool validate()
         {
-            throw new NotImplementedException();
+            return checkRequired() && checkValidationRule();
         }
 
         public bool checkRequired()
@@ -44,7 +44,7 @@ namespace Client.DTO
         {
             foreach (var rule in validationRule)
             {
-                string value = this.GetType().GetProperty(rule.Key).GetValue(this).ToString();
+                string value = this.GetType().GetProperty(rule.Key).GetValue(this, null).ToString();
                 if (value.Length > rule.Value.length) return false;
                 if (!String.IsNullOrEmpty(rule.Value.regex))
                 {

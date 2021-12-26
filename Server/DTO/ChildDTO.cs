@@ -12,7 +12,7 @@ namespace Server.DTO
 	public class ChildDTO : ReaderDTO {
 		public string School { get; set; }
 		public string Class { get; set; }
-		public ChildDTO Protector { get; set; }
+		public string Protector { get; set; }
 
 		protected static new Dictionary<String, String> mappingField = new Dictionary<String, String>()
 		{

@@ -17,7 +17,7 @@ namespace Server.Core.Provider
 
         public static bool excute(Action<SqlConnection, SqlTransaction> context)
         {
-            string conStr = getConfigurationConnect();
+            string conStr = ConfigurationManager.AppSettings.Get("CONNECT_STRING");
             SqlConnection con = new SqlConnection(conStr);
 
             con.Open();
