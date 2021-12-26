@@ -7,6 +7,8 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static Server.Utils.Constrant;
+using static Server.Utils.Utils;
 
 namespace Server.DAO
 {
@@ -55,11 +57,13 @@ namespace Server.DAO
                 cm.CommandType = CommandType.StoredProcedure;
                 if(data.Type.Equals("Adult"))
                 {
+                    data.MADG = generateReaderCode(ReaderType.Adult);
                     cm.CommandText = "CreateAdultReader";
                     setParamsAdult(cm, (AdultDTO) data);
                 }
                 else
                 {
+                    data.MADG = generateReaderCode(ReaderType.Child);
                     cm.CommandText = "CreateChildReader";
                     setParamsChild(cm, (ChildDTO) data);
                 }
@@ -90,6 +94,33 @@ namespace Server.DAO
 
                 cm.ExecuteNonQuery();
             });
+        }
+
+        public string generateReaderCode(ReaderType type) 
+        {
+            string code = "";
+            string prefixCode = type.Equals(ReaderType.Adult) ? AdultPrefix : ChildPrefix;
+            Database.excuteQuery((SqlConnection con) =>
+            {
+                SqlCommand cm = new SqlCommand("GetLastestAdultReaderCode", con);
+                cm.CommandType = CommandType.StoredProcedure;
+
+                SqlDataReader reader = cm.ExecuteReader();
+                if(reader.HasRows)
+                {
+                    reader.Read();
+                    int newestCode = int.Parse(reader["code"].ToString()) + 1;
+                    string seq = newestCode.ToString();
+                    string suffix = new String('0', 8 - seq.Length);
+                    code = $"{prefixCode}{suffix}{seq}";
+                }
+                else
+                {
+                    code = $"{prefixCode}00000001";
+                }
+            });
+
+            return code;
         }
 
         protected void setParamsAdult(SqlCommand cm, AdultDTO data)
