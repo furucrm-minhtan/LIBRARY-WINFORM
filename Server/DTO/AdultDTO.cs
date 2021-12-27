@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Server.Core.Provider;
+using static Server.Utils.Constrant;
 
 namespace Server.DTO
 {
@@ -15,8 +16,9 @@ namespace Server.DTO
 		public string IssuedPlace { get; set; }
 		public string Job { get; set; }
 		public string Degree { get; set; }
+        public new string getReaderType => ReaderType.Adult.ToString();
 
-		protected static new Dictionary<String, String> mappingField = new Dictionary<String, String>()
+        protected static new Dictionary<String, String> mappingField = new Dictionary<String, String>()
 		{
 			{"DisplayName", "DisplayName"},
 			{"UserName", "UserName"},

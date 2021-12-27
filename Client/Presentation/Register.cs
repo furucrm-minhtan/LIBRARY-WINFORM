@@ -40,8 +40,8 @@ namespace Client.Presentation
             catch(Exception ex)
             {
                 Console.WriteLine(ex.Message);
+                MessageBox.Show("Tạo Tài Khoản Thất Bại");
             }
-            MessageBox.Show("Tạo Tài Khoản Thất Bại");
         }
 
         private void SignupChild_Click(object sender, EventArgs e)
@@ -58,8 +58,8 @@ namespace Client.Presentation
             catch (Exception ex)
             {
                 Console.WriteLine(ex.Message);
+                MessageBox.Show("Tạo Tài Khoản Thất Bại");
             }
-            CMessageBox.Show("Tạo Tài Khoản Thất Bại");
         }
 
         private AdultDTO getAdultDataOnForm()
@@ -70,7 +70,7 @@ namespace Client.Presentation
             reader.Birth = Birth_Date.Text;
             reader.Email = Email.Text;
             reader.PhoneNumber = Phone.Text;
-            reader.Sex = Sex.Text;
+            reader.Sex = Sex.Controls.OfType<RadioButton>().FirstOrDefault(r => r.Checked).Text;
             reader.Job = Job.Text;
             reader.Id = CMND.Text;
             reader.IssuedPlace = Issued_Place.Text;
@@ -89,7 +89,7 @@ namespace Client.Presentation
             reader.UserName = User_Name_Child.Text;
             reader.Birth = Birth_Date_Child.Text;
             reader.Email = Email_Child.Text;
-            reader.Sex = Sex_Child.Text;
+            reader.Sex = Sex.Controls.OfType<RadioButton>().FirstOrDefault(r => r.Checked).Name;
             reader.PhoneNumber = Phone_Child.Text;
             reader.School = School.Text;
             reader.Class = Class.Text;

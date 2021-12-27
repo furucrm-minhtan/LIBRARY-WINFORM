@@ -23,6 +23,12 @@ namespace Server.DTO
 		public string Nation { get; set; }
 		public string Nationality { get; set; }
 		public string Type { get; set; }
+		public string CreatedDate { get; set; }
+
+		public string getReaderType
+		{
+			get;
+		}
 
 		protected static Dictionary<String, String> mappingField = new Dictionary<String, String>()
 		{
@@ -36,7 +42,8 @@ namespace Server.DTO
 			{"PhoneNumber", "PhoneNumber"},
 			{"Nation", "Nation"},
 			{"Nationality", "Nationality"},
-			{"Type", "Type"}
+			{"Type", "Type"},
+			{"CreatedDate", "CreatedDate"}
 		};
 
 		public static Dictionary<string, string> getMapping()

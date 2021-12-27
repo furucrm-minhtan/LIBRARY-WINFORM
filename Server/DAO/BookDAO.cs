@@ -148,7 +148,7 @@ namespace Server.DAO
         {
             foreach (var item in BookDTO.getMapping())
             {
-                cm.Parameters.AddWithValue(item.Value, data.GetType().GetProperty(item.Key).GetValue(data));
+                cm.Parameters.AddWithValue($"@{item.Value}", data.GetType().GetProperty(item.Key).GetValue(data));
             }
         }
     }

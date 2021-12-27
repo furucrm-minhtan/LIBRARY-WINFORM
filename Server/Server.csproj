@@ -103,6 +103,11 @@
     <Compile Include="DTO\ReaderDTO.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Utils\Constrant.cs" />
+    <Compile Include="Utils\SMTPMail.cs" />
+    <Compile Include="Utils\Utils.cs" />
+    <Compile Include="Utils\Validation.cs" />
+    <Compile Include="Utils\ValidationRule.cs" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>

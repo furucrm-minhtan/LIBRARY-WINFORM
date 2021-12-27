@@ -67,6 +67,7 @@ namespace Server.DAO
                     cm.CommandText = "CreateChildReader";
                     setParamsChild(cm, (ChildDTO) data);
                 }
+                data.CreatedDate = DateTime.Now.ToString();
 
                 cm.ExecuteNonQuery();
             });
@@ -127,7 +128,7 @@ namespace Server.DAO
         {
             foreach (var item in AdultDTO.getMapping())
             {
-                cm.Parameters.AddWithValue(item.Value, data.GetType().GetProperty(item.Key).GetValue(data));
+                cm.Parameters.AddWithValue($"@{item.Value}", data.GetType().GetProperty(item.Key).GetValue(data));
             }
         }
 
@@ -135,7 +136,7 @@ namespace Server.DAO
         {
             foreach (var item in ChildDTO.getMapping())
             {
-                cm.Parameters.AddWithValue(item.Value, data.GetType().GetProperty(item.Key).GetValue(data));
+                cm.Parameters.AddWithValue($"@{item.Value}", data.GetType().GetProperty(item.Key).GetValue(data));
             }
         }
     }
