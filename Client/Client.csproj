@@ -48,6 +48,7 @@
   <ItemGroup>
     <Compile Include="DTO\AdultDTO.cs" />
     <Compile Include="DTO\ChildDTO.cs" />
+    <Compile Include="Presentation\BitmapImage.cs" />
     <Compile Include="Presentation\Register.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -96,6 +97,9 @@
       <Project>{FADD2CDA-0C66-48AB-8950-8E0F275D055C}</Project>
       <Name>Server</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Nitro_Wallpaper_5000x2813.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

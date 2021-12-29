@@ -33,7 +33,13 @@ namespace Server.DTO
 			{"Id", "Id"},
 			{"IssuedPlace", "IssuedPlace"},
 			{"Job", "Job"},
-			{"Degree", "Degree"}
+			{"Degree", "Degree"},
+			{"CreatedDate", "CreatedDate"}
 		};
+
+		public static Dictionary<string, string> getMapping()
+		{
+			return mappingField;
+		}
 	}
 }

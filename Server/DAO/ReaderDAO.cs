@@ -55,19 +55,21 @@ namespace Server.DAO
                 cm.Connection = con;
                 cm.Transaction = trans;
                 cm.CommandType = CommandType.StoredProcedure;
-                if(data.Type.Equals("Adult"))
+                data.CreatedDate = DateTime.Now.ToString();
+                if (data.Type.Equals("Adult"))
                 {
                     data.MADG = generateReaderCode(ReaderType.Adult);
                     cm.CommandText = "CreateAdultReader";
+                    cm.Parameters.AddWithValue("@MADG", data.MADG);
                     setParamsAdult(cm, (AdultDTO) data);
                 }
                 else
                 {
                     data.MADG = generateReaderCode(ReaderType.Child);
                     cm.CommandText = "CreateChildReader";
+                    cm.Parameters.AddWithValue("@MADG", data.MADG);
                     setParamsChild(cm, (ChildDTO) data);
                 }
-                data.CreatedDate = DateTime.Now.ToString();
 
                 cm.ExecuteNonQuery();
             });
@@ -128,7 +130,7 @@ namespace Server.DAO
         {
             foreach (var item in AdultDTO.getMapping())
             {
-                cm.Parameters.AddWithValue($"@{item.Value}", data.GetType().GetProperty(item.Key).GetValue(data));
+                cm.Parameters.AddWithValue($"@{item.Value}", data.GetType().GetProperty(item.Key).GetValue(data) ?? "");
             }
         }
 
@@ -136,7 +138,7 @@ namespace Server.DAO
         {
             foreach (var item in ChildDTO.getMapping())
             {
-                cm.Parameters.AddWithValue($"@{item.Value}", data.GetType().GetProperty(item.Key).GetValue(data));
+                cm.Parameters.AddWithValue($"@{item.Value}", data.GetType().GetProperty(item.Key).GetValue(data) ?? "");
             }
         }
     }

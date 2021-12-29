@@ -5,11 +5,19 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Server.Utils;
 
 namespace Server.BUS
 {
     public class ReaderBUS : BUS<ReaderDTO>
     {
+        protected SMTPMail mail;
+
+        public ReaderBUS()
+        {
+            this.mail = new SMTPMail("demonblack789@gmail.com");
+        }
+
         public override bool delete(string key)
         {
             try
@@ -28,8 +36,14 @@ namespace Server.BUS
         {
             try
             {
-                ReaderDAO.instance.insert(data);
-                return true;
+                if(ReaderDAO.instance.insert(data))
+                {
+                    mail.setBody($"password: {data.Password}");
+                    mail.setSubject($"Đăng Ký Thành Viên Thư Viện Thành Công");
+                    mail.setRecipients(new List<string> { data.Email });
+                    mail.send();
+                    return true;
+                }
             }
             catch (Exception ex)
             {

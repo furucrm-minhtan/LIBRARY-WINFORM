@@ -31,6 +31,9 @@ namespace Client.Presentation
         {
             this.UserName = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.Degree = new System.Windows.Forms.TextBox();
+            this.label15 = new System.Windows.Forms.Label();
+            this.Birth_Date = new System.Windows.Forms.DateTimePicker();
             this.SignupAdult = new System.Windows.Forms.Button();
             this.UploadAvatar = new System.Windows.Forms.Button();
             this.Avatar = new System.Windows.Forms.PictureBox();
@@ -58,6 +61,7 @@ namespace Client.Presentation
             this.Display_Name = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.Birth_Date_Child = new System.Windows.Forms.DateTimePicker();
             this.SignupChild = new System.Windows.Forms.Button();
             this.Protector = new System.Windows.Forms.ComboBox();
             this.UploadAvatarChild = new System.Windows.Forms.Button();
@@ -80,10 +84,6 @@ namespace Client.Presentation
             this.label21 = new System.Windows.Forms.Label();
             this.Display_Name_Child = new System.Windows.Forms.TextBox();
             this.label22 = new System.Windows.Forms.Label();
-            this.Birth_Date_Child = new System.Windows.Forms.DateTimePicker();
-            this.Birth_Date = new System.Windows.Forms.DateTimePicker();
-            this.Degree = new System.Windows.Forms.TextBox();
-            this.label15 = new System.Windows.Forms.Label();
             this.UserName.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Avatar)).BeginInit();
@@ -139,6 +139,29 @@ namespace Client.Presentation
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Đăng Ký Người Lớn";
             this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // Degree
+            // 
+            this.Degree.Location = new System.Drawing.Point(482, 290);
+            this.Degree.Name = "Degree";
+            this.Degree.Size = new System.Drawing.Size(232, 20);
+            this.Degree.TabIndex = 56;
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(419, 293);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(54, 13);
+            this.label15.TabIndex = 57;
+            this.label15.Text = "Bằng Cấp";
+            // 
+            // Birth_Date
+            // 
+            this.Birth_Date.Location = new System.Drawing.Point(98, 97);
+            this.Birth_Date.Name = "Birth_Date";
+            this.Birth_Date.Size = new System.Drawing.Size(233, 20);
+            this.Birth_Date.TabIndex = 55;
             // 
             // SignupAdult
             // 
@@ -393,6 +416,13 @@ namespace Client.Presentation
             this.tabPage2.Text = "Đăng Ký Cho Trẻ Em";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
+            // Birth_Date_Child
+            // 
+            this.Birth_Date_Child.Location = new System.Drawing.Point(114, 101);
+            this.Birth_Date_Child.Name = "Birth_Date_Child";
+            this.Birth_Date_Child.Size = new System.Drawing.Size(233, 20);
+            this.Birth_Date_Child.TabIndex = 54;
+            // 
             // SignupChild
             // 
             this.SignupChild.Location = new System.Drawing.Point(227, 314);
@@ -584,36 +614,6 @@ namespace Client.Presentation
             this.label22.TabIndex = 29;
             this.label22.Text = "Tên Người dùng";
             // 
-            // Birth_Date_Child
-            // 
-            this.Birth_Date_Child.Location = new System.Drawing.Point(114, 101);
-            this.Birth_Date_Child.Name = "Birth_Date_Child";
-            this.Birth_Date_Child.Size = new System.Drawing.Size(233, 20);
-            this.Birth_Date_Child.TabIndex = 54;
-            // 
-            // Birth_Date
-            // 
-            this.Birth_Date.Location = new System.Drawing.Point(98, 97);
-            this.Birth_Date.Name = "Birth_Date";
-            this.Birth_Date.Size = new System.Drawing.Size(233, 20);
-            this.Birth_Date.TabIndex = 55;
-            // 
-            // Degree
-            // 
-            this.Degree.Location = new System.Drawing.Point(482, 290);
-            this.Degree.Name = "Degree";
-            this.Degree.Size = new System.Drawing.Size(232, 20);
-            this.Degree.TabIndex = 56;
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(419, 293);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(54, 13);
-            this.label15.TabIndex = 57;
-            this.label15.Text = "Bằng Cấp";
-            // 
             // Register
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -622,6 +622,7 @@ namespace Client.Presentation
             this.Controls.Add(this.UserName);
             this.Name = "Register";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.Register_Load);
             this.UserName.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();

@@ -59,5 +59,15 @@ namespace Client.Properties {
                 resourceCulture = value;
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Nitro_Wallpaper_5000x2813 {
+            get {
+                object obj = ResourceManager.GetObject("Nitro_Wallpaper_5000x2813", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }

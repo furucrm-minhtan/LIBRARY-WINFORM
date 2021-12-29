@@ -32,5 +32,10 @@ namespace Server.DTO
 			{"Class", "Class"},
 			{"Protector", "Protector"}
 		};
+
+		public static Dictionary<string, string> getMapping()
+		{
+			return mappingField;
+		}
 	}
 }
