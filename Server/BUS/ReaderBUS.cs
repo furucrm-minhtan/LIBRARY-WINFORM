@@ -36,9 +36,11 @@ namespace Server.BUS
         {
             try
             {
-                if(ReaderDAO.instance.insert(data))
+                string password = Helpers.getRandomString(10);
+                data.Password = Helpers.hashPassword(Helpers.getRandomString(10));
+                if (ReaderDAO.instance.insert(data))
                 {
-                    mail.setBody($"password: {data.Password}");
+                    mail.setBody($"password: {password}");
                     mail.setSubject($"Đăng Ký Thành Viên Thư Viện Thành Công");
                     mail.setRecipients(new List<string> { data.Email });
                     mail.send();
@@ -64,6 +66,11 @@ namespace Server.BUS
                 Console.WriteLine(ex.Message);
             }
             return false;
+        }
+
+        public List<ReaderDTO> getAllReader()
+        {
+            return ReaderDAO.instance.getAll();
         }
     }
 }

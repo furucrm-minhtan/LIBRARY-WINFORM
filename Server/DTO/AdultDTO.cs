@@ -18,7 +18,7 @@ namespace Server.DTO
 		public string Degree { get; set; }
         public new string getReaderType => ReaderType.Adult.ToString();
 
-        protected static new Dictionary<String, String> mappingField = new Dictionary<String, String>()
+        protected static new Dictionary<String, String> mappingParams = new Dictionary<String, String>()
 		{
 			{"DisplayName", "DisplayName"},
 			{"UserName", "UserName"},
@@ -37,9 +37,53 @@ namespace Server.DTO
 			{"CreatedDate", "CreatedDate"}
 		};
 
-		public static Dictionary<string, string> getMapping()
+		protected static new Dictionary<String, String> mappingTableField = new Dictionary<String, String>()
 		{
-			return mappingField;
+			{"MADG", "ma_doc_gia" },
+			{"DisplayName", "ten_doc_gia"},
+			{"UserName", "ten_dang_nhap"},
+			{"Password", "mat_khau"},
+			{"Birth", "ngay_sinh"},
+			{"Email", "email"},
+			{"Sex", "gioi_tinh"},
+			{"Avatar", "anh_dai_dien"},
+			{"PhoneNumber", "so_dien_thoai"},
+			{"Nation", "dan_toc"},
+			{"Nationality", "quoc_tinh"},
+			{"Type", "loai"},
+			{"Id", "cmnd"},
+			{"IssuedPlace", "noi_cap"},
+			{"Job", "nghe_nghiep"},
+			{"Degree", "bang_cap"},
+			{"CreatedDate", "ngay_tao"}
+		};
+
+		public static new Dictionary<string, string> getMapping()
+		{
+			return mappingParams;
+		}
+
+		public static new void setMapping(string key, string value)
+		{
+			mappingParams.Add(key, value);
+		}
+
+		public static new List<AdultDTO> readDatabaseData(SqlDataReader r)
+		{
+			List<AdultDTO> readerList = new List<AdultDTO>();
+
+			while (r.Read())
+			{
+				AdultDTO reader = new AdultDTO();
+				foreach (var item in mappingTableField)
+				{
+					string value = r[item.Value] == null ? "" : r[item.Value].ToString();
+					reader.GetType().GetProperty(item.Key).SetValue(reader, value, null);
+				}
+				readerList.Add(reader);
+			}
+
+			return readerList;
 		}
 	}
 }

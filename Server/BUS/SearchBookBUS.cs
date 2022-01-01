@@ -26,7 +26,7 @@ namespace Server.BUS
                     books = getBooksWithPublish(data.Publish);
                     break;
                 case "tag":
-                    books = getBooksWithTag(data.Tag);
+                    books = getBooksWithTag(int.Parse(data.Tag));
                     break;
                 default:
                     break;
@@ -50,7 +50,7 @@ namespace Server.BUS
             return BookDAO.instance.getBooksPublish(publish);
         }
 
-        public List<BookDTO> getBooksWithTag(string tag)
+        public List<BookDTO> getBooksWithTag(int tag)
         {
             return BookDAO.instance.getBooksTag(tag);
         }

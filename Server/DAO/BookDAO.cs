@@ -47,13 +47,13 @@ namespace Server.DAO
 
         public List<BookDTO> getBooksWithName(string name)
         {
-            string sql = $"SELECT * FROM {table} WHERE ten_sach = '%{name}%'";
             List<BookDTO> rs = new List<BookDTO>();
 
             Database.excuteQuery((SqlConnection con) =>
             {
-                SqlCommand cm = new SqlCommand(sql, con);
-                cm.CommandType = CommandType.Text;
+                SqlCommand cm = new SqlCommand("FindWithBookName", con);
+                cm.CommandType = CommandType.StoredProcedure;
+                cm.Parameters.AddWithValue("@Name", name);
 
                 SqlDataReader reader = cm.ExecuteReader();
 
@@ -65,13 +65,13 @@ namespace Server.DAO
 
         public List<BookDTO> getBooksWithAuthor(string author)
         {
-            string sql = $"SELECT * FROM {table} WHERE ten_tac_gia = '%{author}%'";
             List<BookDTO> rs = new List<BookDTO>();
 
             Database.excuteQuery((SqlConnection con) =>
             {
-                SqlCommand cm = new SqlCommand(sql, con);
-                cm.CommandType = CommandType.Text;
+                SqlCommand cm = new SqlCommand("FindWithAuthorName", con);
+                cm.CommandType = CommandType.StoredProcedure;
+                cm.Parameters.AddWithValue("@Name", author);
 
                 SqlDataReader reader = cm.ExecuteReader();
 
@@ -83,13 +83,13 @@ namespace Server.DAO
 
         public List<BookDTO> getBooksPublish(string publish)
         {
-            string sql = $"SELECT * FROM {table} WHERE ngay_xuat_ban = '{publish}'";
             List<BookDTO> rs = new List<BookDTO>();
 
             Database.excuteQuery((SqlConnection con) =>
             {
-                SqlCommand cm = new SqlCommand(sql, con);
-                cm.CommandType = CommandType.Text;
+                SqlCommand cm = new SqlCommand("FindWithPublishDate", con);
+                cm.CommandType = CommandType.StoredProcedure;
+                cm.Parameters.AddWithValue("@Publish", publish);
 
                 SqlDataReader reader = cm.ExecuteReader();
 
@@ -99,15 +99,15 @@ namespace Server.DAO
             return rs;
         }
 
-        public List<BookDTO> getBooksTag(string tag)
+        public List<BookDTO> getBooksTag(int tag)
         {
-            string sql = $"SELECT * FROM {table} WHERE the_load = '{tag}'";
             List<BookDTO> rs = new List<BookDTO>();
 
             Database.excuteQuery((SqlConnection con) =>
             {
-                SqlCommand cm = new SqlCommand(sql, con);
-                cm.CommandType = CommandType.Text;
+                SqlCommand cm = new SqlCommand("FindWithBookTag", con);
+                cm.CommandType = CommandType.StoredProcedure;
+                cm.Parameters.AddWithValue("@@TagId", tag);
 
                 SqlDataReader reader = cm.ExecuteReader();
 

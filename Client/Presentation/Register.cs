@@ -37,12 +37,12 @@ namespace Client.Presentation
             try
             {
                 Avatar.Image.Dispose();
-                Utils.copyFile(filePath, data.Avatar);
+                Helpers.copyFile(filePath, data.Avatar);
                 if (bus.store(data))
                 {
                     MessageBox.Show("Tạo Tài Khoản Thành Công");
                 }
-                Utils.removeFile(data.Avatar);
+                Helpers.removeFile(data.Avatar);
             }
             catch(Exception ex)
             {
@@ -58,7 +58,7 @@ namespace Client.Presentation
             try
             {
                 Avatar.Image.Dispose();
-                Utils.copyFile(filePath, data.Avatar);
+                Helpers.copyFile(filePath, data.Avatar);
                 if (bus.store(data))
                 {
                     MessageBox.Show("Tạo Tài Khoản Thành Công");
@@ -87,8 +87,7 @@ namespace Client.Presentation
             reader.Nationality = Nationality.Text;
             reader.Degree = Degree.Text;
             reader.Type = "Adult";
-            reader.Avatar = Utils.generateDestinationPathImage(DateTime.Today.ToString("yyyyMMddHHmmss"), Path.GetExtension(filePath));
-            reader.Password = Utils.hashPassword(Utils.getRandomString(10));
+            reader.Avatar = Helpers.generateDestinationPathImage(Helpers.getUnixTime().ToString(), Path.GetExtension(filePath));
 
             return reader;
         }
@@ -106,8 +105,7 @@ namespace Client.Presentation
             reader.Class = Class.Text;
             reader.Protector = Protector.SelectedValue.ToString();
             reader.Type = "Child";
-            reader.Avatar = Utils.generateDestinationPathImage(DateTime.Today.ToString("yyyyMMddHHmmss"), Path.GetExtension(filePath));
-            reader.Password = Utils.hashPassword(Utils.getRandomString(10));
+            reader.Avatar = Helpers.generateDestinationPathImage(Helpers.getUnixTime().ToString(), Path.GetExtension(filePath));
 
             return reader;
         }
@@ -130,6 +128,9 @@ namespace Client.Presentation
             Birth_Date.Format = DateTimePickerFormat.Custom;
             Birth_Date_Child.CustomFormat = "dd/MM/yyyy";
             Birth_Date_Child.Format = DateTimePickerFormat.Custom;
+            Protector.DisplayMember = "label";
+            Protector.ValueMember = "value";
+            Protector.DataSource = Helpers.createOptionsForCombobox(new List<Object>(bus.getAllReader()), "UserName", "MADG", true);
         }
     }
 }

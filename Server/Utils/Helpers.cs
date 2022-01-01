@@ -4,10 +4,11 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static Server.Utils.Constrant;
 
 namespace Server.Utils
 {
-    public class Utils
+    public class Helpers
     {
         public static string fullPathFolderImage
         {
@@ -70,6 +71,23 @@ namespace Server.Utils
                 System.Random random = new System.Random(System.BitConverter.ToInt32(seedBuffer, 0));
                 return new System.String(Enumerable.Repeat(chars, length).Select(s => s[random.Next(s.Length)]).ToArray());
             }
+        }
+
+        public static int getUnixTime()
+        {
+            return (Int32)(DateTime.UtcNow.Subtract(new DateTime(1970, 1, 1))).TotalSeconds;
+        }
+
+        public static List<Options> createOptionsForCombobox(List<Object> data, string displayValue, string value, bool hasNone)
+        {
+            List<Options> options = new List<Options>();
+
+            if(hasNone) options.Add(new Options { label="---None---", value="" });
+            foreach(var item in data) {
+                options.Add(new Options { label = item.GetType().GetProperty(displayValue).GetValue(item).ToString(), value = item.GetType().GetProperty(value).GetValue(item).ToString() });
+            }
+
+            return options;
         }
     }
 }

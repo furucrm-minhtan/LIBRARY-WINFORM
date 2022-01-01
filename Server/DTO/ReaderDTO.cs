@@ -30,7 +30,7 @@ namespace Server.DTO
 			get;
 		}
 
-		protected static Dictionary<String, String> mappingField = new Dictionary<String, String>()
+		protected static Dictionary<String, String> mappingParams = new Dictionary<String, String>()
 		{
 			{"DisplayName", "DisplayName"},
 			{"UserName", "UserName"},
@@ -46,11 +46,32 @@ namespace Server.DTO
 			{"CreatedDate", "CreatedDate"}
 		};
 
+		protected static Dictionary<String, String> mappingTableField = new Dictionary<String, String>()
+		{
+			{"MADG", "ma_doc_gia" },
+			{"DisplayName", "ten_doc_gia"},
+			{"UserName", "ten_dang_nhap"},
+			{"Password", "mat_khau"},
+			{"Birth", "ngay_sinh"},
+			{"Email", "email"},
+			{"Sex", "gioi_tinh"},
+			{"Avatar", "anh_dai_dien"},
+			{"PhoneNumber", "so_dien_thoai"},
+			{"Nation", "dan_toc"},
+			{"Nationality", "quoc_tinh"},
+			{"Type", "loai"},
+			{"CreatedDate", "ngay_tao"}
+		};
+
 		public static Dictionary<string, string> getMapping()
         {
-			return mappingField;
+			return mappingParams;
         }
 
+		public static void setMapping(string key, string value)
+		{
+			mappingParams.Add(key, value);
+		}
 
 		public static List<ReaderDTO> readDatabaseData(SqlDataReader r)
         {
@@ -59,7 +80,7 @@ namespace Server.DTO
 			while(r.Read())
             {
 				ReaderDTO reader = new ReaderDTO();
-				foreach (var item in mappingField)
+				foreach (var item in mappingTableField)
 				{
 					string value = r[item.Value] == null ? "" : r[item.Value].ToString();
 					reader.GetType().GetProperty(item.Key).SetValue(reader, value, null);

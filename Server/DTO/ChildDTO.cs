@@ -33,9 +33,52 @@ namespace Server.DTO
 			{"Protector", "Protector"}
 		};
 
-		public static Dictionary<string, string> getMapping()
+		protected static Dictionary<String, String> mappingTableField = new Dictionary<String, String>()
 		{
-			return mappingField;
+			{"MADG", "ma_doc_gia" },
+			{"DisplayName", "ten_doc_gia"},
+			{"UserName", "ten_dang_nhap"},
+			{"Password", "mat_khau"},
+			{"Birth", "ngay_sinh"},
+			{"Email", "email"},
+			{"Sex", "gioi_tinh"},
+			{"Avatar", "anh_dai_dien"},
+			{"PhoneNumber", "so_dien_thoai"},
+			{"Nation", "dan_toc"},
+			{"Nationality", "quoc_tinh"},
+			{"Type", "loai"},
+			{"CreatedDate", "ngay_tao"},
+			{"School", "truong"},
+			{"Class", "lop"},
+			{"Protector", "nguoi_giam_ho"}
+		};
+
+		public static new Dictionary<string, string> getMapping()
+		{
+			return mappingParams;
+		}
+
+		public static new void setMapping(string key, string value)
+		{
+			mappingParams.Add(key, value);
+		}
+
+		public static new List<ChildDTO> readDatabaseData(SqlDataReader r)
+		{
+			List<ChildDTO> readerList = new List<ChildDTO>();
+
+			while (r.Read())
+			{
+				ChildDTO reader = new ChildDTO();
+				foreach (var item in mappingTableField)
+				{
+					string value = r[item.Value] == null ? "" : r[item.Value].ToString();
+					reader.GetType().GetProperty(item.Key).SetValue(reader, value, null);
+				}
+				readerList.Add(reader);
+			}
+
+			return readerList;
 		}
 	}
 }

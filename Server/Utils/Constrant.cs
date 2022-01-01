@@ -16,5 +16,11 @@ namespace Server.Utils
             Adult,
             Child
         }
+
+        public class Options
+        {
+            public string label { get; set; }
+            public string value { get; set; }
+        }
     }
 }
