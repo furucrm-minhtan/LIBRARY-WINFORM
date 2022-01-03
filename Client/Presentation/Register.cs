@@ -1,6 +1,6 @@
 ﻿using Client.DTO;
+using Client.Utils;
 using Server.BUS;
-using Server.Utils;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -11,6 +11,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static Client.Partials.Validation;
+using static Client.Utils.Helpers;
 
 namespace Client.Presentation
 {
@@ -27,17 +29,20 @@ namespace Client.Presentation
 
         private void SignupAdult_Click(object sender, EventArgs e)
         {
-            AdultDTO data = getAdultDataOnForm();
-            if (!data.validate())
+            if (ValidateChildren())
             {
                 MessageBox.Show("Xin nhập thông tin được yêu cầu");
                 return;
             }
+            AdultDTO data = getAdultDataOnForm();
 
             try
             {
-                Avatar.Image.Dispose();
-                Helpers.copyFile(filePath, data.Avatar);
+                if(!String.IsNullOrEmpty(filePath))
+                {
+                    Avatar.Image.Dispose();
+                    Helpers.copyFile(filePath, data.Avatar);
+                }
                 if (bus.store(data))
                 {
                     MessageBox.Show("Tạo Tài Khoản Thành Công");
@@ -53,6 +58,11 @@ namespace Client.Presentation
 
         private void SignupChild_Click(object sender, EventArgs e)
         {
+            if (ValidateChildren())
+            {
+                MessageBox.Show("Xin nhập thông tin được yêu cầu");
+                return;
+            }
             ChildDTO data = getChildDataOnForm();
 
             try
@@ -131,6 +141,615 @@ namespace Client.Presentation
             Protector.DisplayMember = "label";
             Protector.ValueMember = "value";
             Protector.DataSource = Helpers.createOptionsForCombobox(new List<Object>(bus.getAllReader()), "UserName", "MADG", true);
+            setValidationForm();
+        }
+
+        private void setValidationForm()
+        {
+            AdultDTO.fieldToDisplayForm = getValidationInputSettingForAdult();
+            Dictionary<string, ValidationOptions> adultValidationOptions = AdultDTO.getValidationForClient();
+            List<Control> adultControls = new List<Control>()
+            {
+                Display_Name,
+                User_Name,
+                Phone,
+                Email,
+                Job,
+                Nation,
+                Nationality,
+                CMND,
+                Issued_Place,
+                Degree
+            };
+            RegisterAdultValidation.AddControls(adultControls, adultValidationOptions);
+
+            ChildDTO.fieldToDisplayForm = getValidationInputSettingForChild();
+            Dictionary<string, ValidationOptions> childValidationOptions = ChildDTO.getValidationForClient();
+            List<Control> childControls = new List<Control>()
+            {
+                Display_Name_Child,
+                User_Name_Child,
+                Phone_Child,
+                Email_Child,
+                School,
+                Class
+            };
+            RegisterChildValidation.AddControls(childControls, childValidationOptions);
+        }
+
+        private Dictionary<string, InputValidationSetting> getValidationInputSettingForAdult()
+        {
+            return new Dictionary<string, InputValidationSetting>
+            {
+                {
+                    "DisplayName",
+                    new InputValidationSetting
+                    {
+                        fieldName = "Display_Name",
+                        errorMessages = new Dictionary<ErrorType, string>
+                        {
+                            {
+                                ErrorType.Require,
+                                CustomLabel.format(
+                                    "require",
+                                    new Dictionary<string, string>
+                                    {
+                                        {
+                                            "fieldName",
+                                            Display_Name_Label.Text
+                                        }
+                                    }
+                                )
+                            },
+                             {
+                                ErrorType.Length,
+                                CustomLabel.format(
+                                    "length",
+                                    new Dictionary<string, string>
+                                    {
+                                        {
+                                            "fieldName",
+                                            Display_Name_Label.Text
+                                        },
+                                        {
+                                            "length",
+                                            "255"
+                                        }
+                                    }
+                                )
+                            }
+                        }
+                    }
+                },
+                {
+                    "UserName",
+                    new InputValidationSetting
+                    {
+                        fieldName = "User_Name",
+                        errorMessages = new Dictionary<ErrorType, string>
+                        {
+                            {
+                                ErrorType.Require,
+                                CustomLabel.format(
+                                    "require",
+                                    new Dictionary<string, string>
+                                    {
+                                        {
+                                            "fieldName",
+                                            User_Name_Label.Text
+                                        }
+                                    }
+                                )
+                            },
+                             {
+                                ErrorType.Length,
+                                CustomLabel.format(
+                                    "length",
+                                    new Dictionary<string, string>
+                                    {
+                                        {
+                                            "fieldName",
+                                            User_Name_Label.Text
+                                        },
+                                        {
+                                            "length",
+                                            "50"
+                                        }
+                                    }
+                                )
+                            }
+                        }
+                    }
+                },
+                {
+                    "Email",
+                    new InputValidationSetting
+                    {
+                        fieldName = "Email",
+                        errorMessages = new Dictionary<ErrorType, string>
+                        {
+                            {
+                                ErrorType.Require,
+                                CustomLabel.format(
+                                    "require",
+                                    new Dictionary<string, string>
+                                    {
+                                        {
+                                            "fieldName",
+                                            Email_Label.Text
+                                        }
+                                    }
+                                )
+                            },
+                            {
+                                ErrorType.Length,
+                                CustomLabel.format(
+                                    "length",
+                                    new Dictionary<string, string>
+                                    {
+                                        {
+                                            "fieldName",
+                                            Email_Label.Text
+                                        },
+                                        {
+                                            "length",
+                                            "10"
+                                        }
+                                    }
+                                )
+                            },
+                            {
+                                ErrorType.Format,
+                                CustomLabel.format(
+                                    "format",
+                                    new Dictionary<string, string>
+                                    {
+                                        {
+                                            "fieldName",
+                                            Email_Label.Text
+                                        }
+                                    }
+                                )
+                            }
+                        }
+                    }
+                },
+                {
+                    "PhoneNumber",
+                    new InputValidationSetting
+                    {
+                        fieldName = "Phone",
+                        errorMessages = new Dictionary<ErrorType, string>
+                        {
+                            {
+                                ErrorType.Require,
+                                CustomLabel.format(
+                                    "require",
+                                    new Dictionary<string, string>
+                                    {
+                                        {
+                                            "fieldName",
+                                            Phone_Label.Text
+                                        }
+                                    }
+                                )
+                            },
+                            {
+                                ErrorType.Length,
+                                CustomLabel.format(
+                                    "length",
+                                    new Dictionary<string, string>
+                                    {
+                                        {
+                                            "fieldName",
+                                            Phone_Label.Text
+                                        },
+                                        {
+                                            "length",
+                                            "11"
+                                        }
+                                    }
+                                )
+                            }
+                        },
+                    }
+                },
+                {
+                    "Job",
+                    new InputValidationSetting
+                    {
+                        fieldName = "Job",
+                        errorMessages = new Dictionary<ErrorType, string>
+                        {
+                            {
+                                ErrorType.Length,
+                                CustomLabel.format(
+                                    "length",
+                                    new Dictionary<string, string>
+                                    {
+                                        {
+                                            "fieldName",
+                                            Job_Label.Text
+                                        },
+                                        {
+                                            "length",
+                                            "11"
+                                        }
+                                    }
+                                )
+                            }
+                        },
+                    }
+                },
+                {
+                    "Nation",
+                    new InputValidationSetting
+                    {
+                        fieldName = "Nation",
+                        errorMessages = new Dictionary<ErrorType, string>
+                        {
+                            {
+                                ErrorType.Length,
+                                CustomLabel.format(
+                                    "length",
+                                    new Dictionary<string, string>
+                                    {
+                                        {
+                                            "fieldName",
+                                            Nation_Label.Text
+                                        },
+                                        {
+                                            "length",
+                                            "10"
+                                        }
+                                    }
+                                )
+                            }
+                        },
+                    }
+                },
+                {
+                    "Nationality",
+                    new InputValidationSetting
+                    {
+                        fieldName = "Nationality",
+                        errorMessages = new Dictionary<ErrorType, string>
+                        {
+                            {
+                                ErrorType.Length,
+                                CustomLabel.format(
+                                    "length",
+                                    new Dictionary<string, string>
+                                    {
+                                        {
+                                            "fieldName",
+                                            Nationality_Label.Text
+                                        },
+                                        {
+                                            "length",
+                                            "100"
+                                        }
+                                    }
+                                )
+                            }
+                        },
+                    }
+                },
+                {
+                    "Id",
+                    new InputValidationSetting
+                    {
+                        fieldName = "CMND",
+                        errorMessages = new Dictionary<ErrorType, string>
+                        {
+                            {
+                                ErrorType.Length,
+                                CustomLabel.format(
+                                    "length",
+                                    new Dictionary<string, string>
+                                    {
+                                        {
+                                            "fieldName",
+                                            Id_Label.Text
+                                        },
+                                        {
+                                            "length",
+                                            "10"
+                                        }
+                                    }
+                                )
+                            }
+                        },
+                    }
+                },
+                {
+                    "IssuedPlace",
+                    new InputValidationSetting
+                    {
+                        fieldName = "Issued_Place",
+                        errorMessages = new Dictionary<ErrorType, string>
+                        {
+                            {
+                                ErrorType.Length,
+                                CustomLabel.format(
+                                    "length",
+                                    new Dictionary<string, string>
+                                    {
+                                        {
+                                            "fieldName",
+                                            Issued_Place_Label.Text
+                                        },
+                                        {
+                                            "length",
+                                            "20"
+                                        }
+                                    }
+                                )
+                            }
+                        },
+                    }
+                },
+                {
+                    "Degree",
+                    new InputValidationSetting
+                    {
+                        fieldName = "Degree",
+                        errorMessages = new Dictionary<ErrorType, string>
+                        {
+                            {
+                                ErrorType.Length,
+                                CustomLabel.format(
+                                    "length",
+                                    new Dictionary<string, string>
+                                    {
+                                        {
+                                            "fieldName",
+                                            Degree_Label.Text
+                                        },
+                                        {
+                                            "length",
+                                            "10"
+                                        }
+                                    }
+                                )
+                            }
+                        },
+                    }
+                }
+            };
+        }
+        private Dictionary<string, InputValidationSetting> getValidationInputSettingForChild()
+        {
+            return new Dictionary<string, InputValidationSetting>
+            {
+                {
+                    "DisplayName",
+                    new InputValidationSetting
+                    {
+                        fieldName = "Display_Name_Child",
+                        errorMessages = new Dictionary<ErrorType, string>
+                        {
+                            {
+                                ErrorType.Require,
+                                CustomLabel.format(
+                                    "require",
+                                    new Dictionary<string, string>
+                                    {
+                                        {
+                                            "fieldName",
+                                            Display_Name_Child_Label.Text
+                                        }
+                                    }
+                                )
+                            },
+                             {
+                                ErrorType.Length,
+                                CustomLabel.format(
+                                    "length",
+                                    new Dictionary<string, string>
+                                    {
+                                        {
+                                            "fieldName",
+                                            Display_Name_Child_Label.Text
+                                        },
+                                        {
+                                            "length",
+                                            "255"
+                                        }
+                                    }
+                                )
+                            }
+                        }
+                    }
+                },
+                {
+                    "UserName",
+                    new InputValidationSetting
+                    {
+                        fieldName = "User_Name_Child",
+                        errorMessages = new Dictionary<ErrorType, string>
+                        {
+                            {
+                                ErrorType.Require,
+                                CustomLabel.format(
+                                    "require",
+                                    new Dictionary<string, string>
+                                    {
+                                        {
+                                            "fieldName",
+                                            User_Name_Child_Label.Text
+                                        }
+                                    }
+                                )
+                            },
+                             {
+                                ErrorType.Length,
+                                CustomLabel.format(
+                                    "length",
+                                    new Dictionary<string, string>
+                                    {
+                                        {
+                                            "fieldName",
+                                            User_Name_Child_Label.Text
+                                        },
+                                        {
+                                            "length",
+                                            "50"
+                                        }
+                                    }
+                                )
+                            }
+                        }
+                    }
+                },
+                {
+                    "Email",
+                    new InputValidationSetting
+                    {
+                        fieldName = "Email_Child",
+                        errorMessages = new Dictionary<ErrorType, string>
+                        {
+                            {
+                                ErrorType.Require,
+                                CustomLabel.format(
+                                    "require",
+                                    new Dictionary<string, string>
+                                    {
+                                        {
+                                            "fieldName",
+                                            Email_Child_Label.Text
+                                        }
+                                    }
+                                )
+                            },
+                            {
+                                ErrorType.Length,
+                                CustomLabel.format(
+                                    "length",
+                                    new Dictionary<string, string>
+                                    {
+                                        {
+                                            "fieldName",
+                                            Email_Child_Label.Text
+                                        },
+                                        {
+                                            "length",
+                                            "10"
+                                        }
+                                    }
+                                )
+                            },
+                            {
+                                ErrorType.Format,
+                                CustomLabel.format(
+                                    "format",
+                                    new Dictionary<string, string>
+                                    {
+                                        {
+                                            "fieldName",
+                                            Email_Child_Label.Text
+                                        }
+                                    }
+                                )
+                            }
+                        }
+                    }
+                },
+                {
+                    "PhoneNumber",
+                    new InputValidationSetting
+                    {
+                        fieldName = "Phone_Child",
+                        errorMessages = new Dictionary<ErrorType, string>
+                        {
+                            {
+                                ErrorType.Require,
+                                CustomLabel.format(
+                                    "require",
+                                    new Dictionary<string, string>
+                                    {
+                                        {
+                                            "fieldName",
+                                            Phone_Child_Label.Text
+                                        }
+                                    }
+                                )
+                            },
+                            {
+                                ErrorType.Length,
+                                CustomLabel.format(
+                                    "length",
+                                    new Dictionary<string, string>
+                                    {
+                                        {
+                                            "fieldName",
+                                            Phone_Child_Label.Text
+                                        },
+                                        {
+                                            "length",
+                                            "11"
+                                        }
+                                    }
+                                )
+                            }
+                        },
+                    }
+                },
+                {
+                    "School",
+                    new InputValidationSetting
+                    {
+                        fieldName = "School",
+                        errorMessages = new Dictionary<ErrorType, string>
+                        {
+                            {
+                                ErrorType.Length,
+                                CustomLabel.format(
+                                    "length",
+                                    new Dictionary<string, string>
+                                    {
+                                        {
+                                            "fieldName",
+                                            School_Label.Text
+                                        },
+                                        {
+                                            "length",
+                                            "50"
+                                        }
+                                    }
+                                )
+                            }
+                        },
+                    }
+                },
+                {
+                    "Class",
+                    new InputValidationSetting
+                    {
+                        fieldName = "Class",
+                        errorMessages = new Dictionary<ErrorType, string>
+                        {
+                            {
+                                ErrorType.Length,
+                                CustomLabel.format(
+                                    "length",
+                                    new Dictionary<string, string>
+                                    {
+                                        {
+                                            "fieldName",
+                                            Issued_Place_Label.Text
+                                        },
+                                        {
+                                            "length",
+                                            "10"
+                                        }
+                                    }
+                                )
+                            }
+                        },
+                    }
+                }
+            };
         }
     }
 }

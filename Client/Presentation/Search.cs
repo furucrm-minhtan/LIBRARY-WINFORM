@@ -26,7 +26,7 @@ namespace Client.Presentation
 
         private void TextChanged(object Sender, EventArgs e)
         {
-            System.Windows.Controls.TextBox txtBox = (System.Windows.Controls.TextBox)Sender;
+            System.Windows.Forms.TextBox txtBox = (System.Windows.Forms.TextBox)Sender;
 
             switch (txtBox.Name)
             {
@@ -34,7 +34,7 @@ namespace Client.Presentation
                     ListBookSearchName.DataSource = SearchBus.getBooksWithName(txtBox.Text);
                     break;
                 case "Author":
-                    ListBookSearchName.DataSource = SearchBus.getBooksWithAuthor(txtBox.Text);
+                    ListBookSearchAuthor.DataSource = SearchBus.getBooksWithAuthor(txtBox.Text);
                     break;
             }
         }
@@ -47,7 +47,10 @@ namespace Client.Presentation
             Author.TextChanged += new EventHandler(TextChanged);
             Tag.DisplayMember = "label";
             Tag.ValueMember = "value";
-            Tag.DataSource = Helpers.createOptionsForCombobox(new List<Object>(TagBus.getAllTag()), "Id", "Name", true);
+            Tag.DataSource = Helpers.createOptionsForCombobox(new List<Object>(TagBus.getAllTag()), "Name", "Id", true);
+            PublishDate.CustomFormat = "dd/MM/yyyy";
+            PublishDate.Format = DateTimePickerFormat.Custom; 
+            loadDefaultListBook();
         }
 
         private void PublishDate_ValueChanged(object sender, EventArgs e)
@@ -61,6 +64,15 @@ namespace Client.Presentation
             {
                 ListBookSearchTag.DataSource = SearchBus.getBooksWithTag(int.Parse(Tag.SelectedValue.ToString()));
             }
+        }
+
+        private void loadDefaultListBook()
+        {
+            List<BookDTO> books = SearchBus.getAllBook();
+            ListBookSearchName.DataSource = books;
+            ListBookSearchAuthor.DataSource = books;
+            ListBookSearchPublishDate.DataSource = books;
+            ListBookSearchTag.DataSource = books;
         }
     }
 }

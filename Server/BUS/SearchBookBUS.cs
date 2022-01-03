@@ -35,6 +35,11 @@ namespace Server.BUS
             return books;
         }
 
+        public List<BookDTO> getAllBook()
+        {
+            return BookDAO.instance.getAll();
+        }
+
         public List<BookDTO> getBooksWithName(string name)
         {
             return BookDAO.instance.getBooksWithName(name);

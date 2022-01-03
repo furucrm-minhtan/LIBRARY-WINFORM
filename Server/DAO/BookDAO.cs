@@ -107,7 +107,7 @@ namespace Server.DAO
             {
                 SqlCommand cm = new SqlCommand("FindWithBookTag", con);
                 cm.CommandType = CommandType.StoredProcedure;
-                cm.Parameters.AddWithValue("@@TagId", tag);
+                cm.Parameters.AddWithValue("@TagId", tag);
 
                 SqlDataReader reader = cm.ExecuteReader();
 

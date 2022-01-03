@@ -17,10 +17,12 @@ namespace Server.DTO
         public string Publish { get; set; }
         public string ISBN { get; set; }
         public string Position { get; set; }
-        public int Remain { get; set; }
+        public string Remain { get; set; }
         public string Tag { get; set; }
 
-		protected static Dictionary<String, String> mappingField = new Dictionary<String, String>()
+		public string CreatedDate { get; set; }
+
+		protected static Dictionary<String, String> mappingParams = new Dictionary<String, String>()
 		{
 			{"Name", "Name"},
 			{"Author", "Author"},
@@ -29,12 +31,34 @@ namespace Server.DTO
 			{"Publish", "Publish"},
 			{"ISBN", "ISBN"},
 			{"Position", "Position"},
-			{"Remain", "Remain"}
+			{"Remain", "Remain"},
+			{"Tag", "Tag"},
+			{"CreatedDate", "CreatedDate"}
+		};
+
+		protected static Dictionary<String, String> mappingTableField = new Dictionary<String, String>()
+		{
+			{"Id", "ma_sach" },
+			{"Name", "ten_sach"},
+			{"Author", "ten_tac_gia"},
+			{"Description", "mo_ta"},
+			{"Cover", "trang_bia"},
+			{"Publish", "ngay_xuat_ban"},
+			{"ISBN", "isbn"},
+			{"Position", "vi_tri"},
+			{"Remain", "so_luong_ton_kho"},
+			{"Tag", "the_loai" },
+			{"CreatedDate", "ngay_tao"}
 		};
 
 		public static Dictionary<string, string> getMapping()
 		{
-			return mappingField;
+			return mappingParams;
+		}
+
+		public static void setMapping(string key, string value)
+		{
+			mappingParams.Add(key, value);
 		}
 
 
@@ -45,7 +69,7 @@ namespace Server.DTO
 			while (r.Read())
 			{
 				BookDTO reader = new BookDTO();
-				foreach (var item in mappingField)
+				foreach (var item in mappingTableField)
 				{
 					string value = r[item.Value] == null ? "" : r[item.Value].ToString();
 					reader.GetType().GetProperty(item.Key).SetValue(reader, value, null);

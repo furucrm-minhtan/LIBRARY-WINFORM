@@ -24,10 +24,10 @@ C:\Users\Tan\source\repos\Project_PTUDCSDL\Server\bin\Debug\System.Security.Acce
 C:\Users\Tan\source\repos\Project_PTUDCSDL\Server\bin\Debug\System.Security.Permissions.xml
 C:\Users\Tan\source\repos\Project_PTUDCSDL\Server\bin\Debug\System.Security.Principal.Windows.xml
 C:\Users\Tan\source\repos\Project_PTUDCSDL\Server\bin\Debug\System.ValueTuple.xml
+C:\Users\Tan\source\repos\Project_PTUDCSDL\Server\obj\Debug\Server.csprojAssemblyReference.cache
 C:\Users\Tan\source\repos\Project_PTUDCSDL\Server\obj\Debug\Server.Properties.Resources.resources
 C:\Users\Tan\source\repos\Project_PTUDCSDL\Server\obj\Debug\Server.csproj.GenerateResource.cache
 C:\Users\Tan\source\repos\Project_PTUDCSDL\Server\obj\Debug\Server.csproj.CoreCompileInputs.cache
 C:\Users\Tan\source\repos\Project_PTUDCSDL\Server\obj\Debug\Server.csproj.CopyComplete
 C:\Users\Tan\source\repos\Project_PTUDCSDL\Server\obj\Debug\Server.exe
 C:\Users\Tan\source\repos\Project_PTUDCSDL\Server\obj\Debug\Server.pdb
-C:\Users\Tan\source\repos\Project_PTUDCSDL\Server\obj\Debug\Server.csprojAssemblyReference.cache

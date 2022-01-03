@@ -226,7 +226,7 @@ namespace Client.Presentation
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.tabControl1);
-            this.Name = "Search";
+            //this.Name = "Search";
             this.Text = "Search";
             this.Load += new System.EventHandler(this.Search_Load);
             this.tabControl1.ResumeLayout(false);

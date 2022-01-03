@@ -49,6 +49,12 @@
   <ItemGroup>
     <Compile Include="DTO\AdultDTO.cs" />
     <Compile Include="DTO\ChildDTO.cs" />
+    <Compile Include="Partials\Validation.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Partials\Validation.Designer.cs">
+      <DependentUpon>Validation.cs</DependentUpon>
+    </Compile>
     <Compile Include="Presentation\BitmapImage.cs" />
     <Compile Include="Presentation\Register.cs">
       <SubType>Form</SubType>
@@ -64,6 +70,8 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Utils\Helpers.cs" />
+    <Compile Include="Utils\CustomLabel.cs" />
     <EmbeddedResource Include="Presentation\Register.resx">
       <DependentUpon>Register.cs</DependentUpon>
     </EmbeddedResource>
