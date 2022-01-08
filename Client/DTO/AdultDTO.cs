@@ -85,6 +85,7 @@ namespace Client.DTO
                     new ValidationOptions {
                         IsRequired = true,
                         MaxLength = 11,
+                        RegExString = @"^[0-9]*$",
                         TypeControl = TypeControl.Text,
                         ErrorMessages = new Dictionary<ErrorType, string>
                         {
@@ -95,6 +96,10 @@ namespace Client.DTO
                             {
                                 ErrorType.Length,
                                 fieldToDisplayForm["PhoneNumber"].errorMessages[ErrorType.Length]
+                            },
+                            {
+                                ErrorType.Format,
+                                fieldToDisplayForm["PhoneNumber"].errorMessages[ErrorType.Format]
                             }
                         }
                     }

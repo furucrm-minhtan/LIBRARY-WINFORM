@@ -16,7 +16,7 @@ namespace Server.DTO
 		public string Protector { get; set; }
         public new string getReaderType => ReaderType.Child.ToString();
 
-        protected static new Dictionary<String, String> mappingField = new Dictionary<String, String>()
+        protected static new Dictionary<String, String> mappingParams = new Dictionary<String, String>()
 		{
 			{"DisplayName", "DisplayName"},
 			{"UserName", "UserName"},
@@ -26,14 +26,13 @@ namespace Server.DTO
 			{"Sex", "Sex"},
 			{"Avatar", "Avatar"},
 			{"PhoneNumber", "PhoneNumber"},
-			{"Nation", "Nation"},
-			{"Nationality", "Nationality"},
 			{"School", "School"},
 			{"Class", "Class"},
-			{"Protector", "Protector"}
+			{"Protector", "Protector"},
+			{"CreatedDate", "CreatedDate"}
 		};
 
-		protected static Dictionary<String, String> mappingTableField = new Dictionary<String, String>()
+		protected static new Dictionary<String, String> mappingTableField = new Dictionary<String, String>()
 		{
 			{"MADG", "ma_doc_gia" },
 			{"DisplayName", "ten_doc_gia"},
@@ -60,7 +59,7 @@ namespace Server.DTO
 
 		public static new void setMapping(string key, string value)
 		{
-			mappingParams.Add(key, value);
+            mappingParams.Add(key, value);
 		}
 
 		public static new List<ChildDTO> readDatabaseData(SqlDataReader r)

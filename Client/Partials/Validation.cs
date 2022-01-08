@@ -49,7 +49,7 @@ namespace Client.Partials
                     return;
                 }
 
-                if (options.MaxLength > 0)
+                if (control.Text.Length > options.MaxLength)
                 {
                     errorProvider.SetError(control, options.ErrorMessages[ErrorType.Length]);
                     control.BackColor = Color.Red;
@@ -62,7 +62,7 @@ namespace Client.Partials
                     Regex rx = new Regex(options.RegExString);
                     MatchCollection matches = rx.Matches(control.Text);
 
-                    if (matches.Count < 0)
+                    if (matches.Count <= 0)
                     {
                         errorProvider.SetError(control, options.ErrorMessages[ErrorType.Format]);
                         control.BackColor = Color.Red;

@@ -29,7 +29,8 @@ namespace Client.Presentation
 
         private void SignupAdult_Click(object sender, EventArgs e)
         {
-            if (ValidateChildren())
+            ValidateChildren();
+            if (RegisterAdultValidation.hasError())
             {
                 MessageBox.Show("Xin nhập thông tin được yêu cầu");
                 return;
@@ -42,6 +43,11 @@ namespace Client.Presentation
                 {
                     Avatar.Image.Dispose();
                     Helpers.copyFile(filePath, data.Avatar);
+                }
+                if(bus.checkUserExist(data))
+                {
+                    MessageBox.Show("Tên Tài Khoản Đã Tồn Tại");
+                    return;
                 }
                 if (bus.store(data))
                 {
@@ -58,7 +64,9 @@ namespace Client.Presentation
 
         private void SignupChild_Click(object sender, EventArgs e)
         {
-            if (ValidateChildren())
+            ValidateChildren();
+
+            if (RegisterChildValidation.hasError())
             {
                 MessageBox.Show("Xin nhập thông tin được yêu cầu");
                 return;
@@ -67,8 +75,17 @@ namespace Client.Presentation
 
             try
             {
-                Avatar.Image.Dispose();
-                Helpers.copyFile(filePath, data.Avatar);
+                if (!String.IsNullOrEmpty(filePath))
+                {
+                    Child_Avatar.Image.Dispose();
+                    Helpers.copyFile(filePath, data.Avatar);
+                }
+                
+                if (bus.checkUserExist(data))
+                {
+                    MessageBox.Show("Tên Tài Khoản Đã Tồn Tại");
+                    return;
+                }
                 if (bus.store(data))
                 {
                     MessageBox.Show("Tạo Tài Khoản Thành Công");
@@ -132,6 +149,18 @@ namespace Client.Presentation
             }
         }
 
+        private void UploadAvatarChild_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            openFileDialog.Filter = "Image files (*.png;*.jpeg;*.jpg)|*.png;*.jpeg;*.jpg";
+            openFileDialog.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
+            if (openFileDialog.ShowDialog().Equals(DialogResult.OK))
+            {
+                filePath = openFileDialog.FileName;
+                Child_Avatar.Image = new Bitmap(filePath);
+            }
+        }
+
         private void Register_Load(object sender, EventArgs e)
         {
             Birth_Date.CustomFormat = "dd/MM/yyyy";
@@ -140,7 +169,7 @@ namespace Client.Presentation
             Birth_Date_Child.Format = DateTimePickerFormat.Custom;
             Protector.DisplayMember = "label";
             Protector.ValueMember = "value";
-            Protector.DataSource = Helpers.createOptionsForCombobox(new List<Object>(bus.getAllReader()), "UserName", "MADG", true);
+            Protector.DataSource = Helpers.createOptionsForCombobox(new List<Object>(bus.getAdultReader()), "UserName", "MADG", true);
             setValidationForm();
         }
 
@@ -325,6 +354,19 @@ namespace Client.Presentation
                                 ErrorType.Require,
                                 CustomLabel.format(
                                     "require",
+                                    new Dictionary<string, string>
+                                    {
+                                        {
+                                            "fieldName",
+                                            Phone_Label.Text
+                                        }
+                                    }
+                                )
+                            },
+                            {
+                                ErrorType.Format,
+                                CustomLabel.format(
+                                    "format",
                                     new Dictionary<string, string>
                                     {
                                         {

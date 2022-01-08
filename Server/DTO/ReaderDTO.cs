@@ -40,8 +40,6 @@ namespace Server.DTO
 			{"Sex", "Sex"},
 			{"Avatar", "Avatar"},
 			{"PhoneNumber", "PhoneNumber"},
-			{"Nation", "Nation"},
-			{"Nationality", "Nationality"},
 			{"Type", "Type"},
 			{"CreatedDate", "CreatedDate"}
 		};
@@ -57,8 +55,6 @@ namespace Server.DTO
 			{"Sex", "gioi_tinh"},
 			{"Avatar", "anh_dai_dien"},
 			{"PhoneNumber", "so_dien_thoai"},
-			{"Nation", "dan_toc"},
-			{"Nationality", "quoc_tinh"},
 			{"Type", "loai"},
 			{"CreatedDate", "ngay_tao"}
 		};

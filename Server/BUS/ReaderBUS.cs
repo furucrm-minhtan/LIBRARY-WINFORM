@@ -72,5 +72,14 @@ namespace Server.BUS
         {
             return ReaderDAO.instance.getAll();
         }
+        public List<ReaderDTO> getAdultReader()
+        {
+            return ReaderDAO.instance.getAdultReader();
+        }
+
+        public bool checkUserExist(ReaderDTO data)
+        {
+            return ReaderDAO.instance.checkUserExist(data.UserName);
+        }
     }
 }

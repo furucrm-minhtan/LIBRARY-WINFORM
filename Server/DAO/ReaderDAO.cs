@@ -47,6 +47,23 @@ namespace Server.DAO
             return rs;
         }
 
+        public List<ReaderDTO> getAdultReader()
+        {
+            List<ReaderDTO> rs = new List<ReaderDTO>();
+
+            Database.excuteQuery((SqlConnection con) =>
+            {
+                SqlCommand cm = new SqlCommand("GetAdultReaders", con);
+                cm.CommandType = CommandType.StoredProcedure;
+
+                SqlDataReader reader = cm.ExecuteReader();
+
+                rs = ReaderDTO.readDatabaseData(reader);
+            });
+
+            return rs;
+        }
+
         public override bool insert(ReaderDTO data)
         {
             return Database.excute((SqlConnection con, SqlTransaction trans) =>
@@ -101,29 +118,84 @@ namespace Server.DAO
 
         public string generateReaderCode(ReaderType type) 
         {
+            if(type.Equals(ReaderType.Adult))
+            {
+                return generateAdultCode(AdultPrefix);
+            }
+
+            return generateChildCode(ChildPrefix);
+        }
+
+        private string generateAdultCode(string prefixCode)
+        {
             string code = "";
-            string prefixCode = type.Equals(ReaderType.Adult) ? AdultPrefix : ChildPrefix;
+
             Database.excuteQuery((SqlConnection con) =>
             {
                 SqlCommand cm = new SqlCommand("GetLastestAdultReaderCode", con);
                 cm.CommandType = CommandType.StoredProcedure;
 
                 SqlDataReader reader = cm.ExecuteReader();
-                if(reader.HasRows)
+                if (reader.HasRows)
                 {
                     reader.Read();
                     int newestCode = int.Parse(reader["code"].ToString()) + 1;
                     string seq = newestCode.ToString();
-                    string suffix = new String('0', 8 - seq.Length);
+                    string suffix = new String('0', 6 - seq.Length);
                     code = $"{prefixCode}{suffix}{seq}";
                 }
                 else
                 {
-                    code = $"{prefixCode}00000001";
+                    code = $"{prefixCode}000001";
                 }
             });
 
             return code;
+        }
+
+        private string generateChildCode(string prefixCode)
+        {
+            string code = "";
+
+            Database.excuteQuery((SqlConnection con) =>
+            {
+                SqlCommand cm = new SqlCommand("GetLastestChildReaderCode", con);
+                cm.CommandType = CommandType.StoredProcedure;
+
+                SqlDataReader reader = cm.ExecuteReader();
+                if (reader.HasRows)
+                {
+                    reader.Read();
+                    int newestCode = int.Parse(reader["code"].ToString()) + 1;
+                    string seq = newestCode.ToString();
+                    string suffix = new String('0', 6 - seq.Length);
+                    code = $"{prefixCode}{suffix}{seq}";
+                }
+                else
+                {
+                    code = $"{prefixCode}000001";
+                }
+            });
+
+            return code;
+        }
+
+        public bool checkUserExist(string userName)
+        {   
+            List<ReaderDTO> rs = new List<ReaderDTO>();
+
+            Database.excuteQuery((SqlConnection con) =>
+            {
+                SqlCommand cm = new SqlCommand("CheckUserExist", con);
+                cm.CommandType = CommandType.StoredProcedure;
+                cm.Parameters.AddWithValue("@UserName", userName);
+
+                SqlDataReader reader = cm.ExecuteReader();
+
+                rs = ReaderDTO.readDatabaseData(reader);
+            });
+
+            return rs.Any();
         }
 
         protected void setParamsAdult(SqlCommand cm, AdultDTO data)
@@ -138,6 +210,19 @@ namespace Server.DAO
         {
             foreach (var item in ChildDTO.getMapping())
             {
+                if(item.Key.Equals("Protector"))
+                {
+                    if(String.IsNullOrEmpty(data.Protector))
+                    {
+
+                        cm.Parameters.AddWithValue($"@{item.Value}", DBNull.Value);
+                    }
+                    else
+                    {
+                        cm.Parameters.AddWithValue($"@{item.Value}", data.Protector);
+                    }
+                    continue;
+                }
                 cm.Parameters.AddWithValue($"@{item.Value}", data.GetType().GetProperty(item.Key).GetValue(data) ?? "");
             }
         }

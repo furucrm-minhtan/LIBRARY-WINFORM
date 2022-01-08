@@ -7,8 +7,16 @@ IF EXISTS (SELECT * FROM sys.objects WHERE type = 'P' AND name = 'GetLastestAdul
 	DROP PROCEDURE GetLastestAdultReaderCode
 GO
 
+IF EXISTS (SELECT * FROM sys.objects WHERE type = 'P' AND name = 'GetLastestChildReaderCode')
+	DROP PROCEDURE GetLastestChildReaderCode
+GO
+
 IF EXISTS (SELECT * FROM sys.objects WHERE type = 'P' AND name = 'GetReaders')
 	DROP PROCEDURE GetReaders
+GO
+
+IF EXISTS (SELECT * FROM sys.objects WHERE type = 'P' AND name = 'GetAdultReaders')
+	DROP PROCEDURE GetAdultReaders
 GO
 
 IF EXISTS (SELECT * FROM sys.objects WHERE type = 'P' AND name = 'CreateAdultReader')
@@ -25,6 +33,10 @@ GO
 
 IF EXISTS (SELECT * FROM sys.objects WHERE type = 'P' AND name = 'UpdateChildReader')
 	DROP PROCEDURE UpdateChildReader
+GO
+
+IF EXISTS (SELECT * FROM sys.objects WHERE type = 'P' AND name = 'CheckUserExist')
+	DROP PROCEDURE CheckUserExist
 GO
 
 IF EXISTS (SELECT * FROM sys.objects WHERE type = 'P' AND name = 'DeleteReader')
@@ -47,6 +59,26 @@ IF EXISTS (SELECT * FROM sys.objects WHERE type = 'P' AND name = 'DeleteBook')
 	DROP PROCEDURE DeleteBook
 GO
 
+IF EXISTS (SELECT * FROM sys.objects WHERE type = 'P' AND name = 'FindWithBookName')
+	DROP PROCEDURE FindWithBookName
+GO
+
+IF EXISTS (SELECT * FROM sys.objects WHERE type = 'P' AND name = 'FindWithAuthorName')
+	DROP PROCEDURE FindWithAuthorName
+GO
+
+IF EXISTS (SELECT * FROM sys.objects WHERE type = 'P' AND name = 'FindWithPublishDate')
+	DROP PROCEDURE FindWithPublishDate
+GO
+
+IF EXISTS (SELECT * FROM sys.objects WHERE type = 'P' AND name = 'FindWithBookTag')
+	DROP PROCEDURE FindWithBookTag
+GO
+
+IF EXISTS (SELECT * FROM sys.objects WHERE type = 'P' AND name = 'GetTags')
+	DROP PROCEDURE GetTags
+GO
+
 /* DROP TABLE */
 
 IF EXISTS(SELECT * FROM sys.tables WHERE SCHEMA_NAME(schema_id) LIKE 'dbo' AND name like 'readers')  
@@ -62,9 +94,9 @@ IF EXISTS(SELECT * FROM sys.tables WHERE SCHEMA_NAME(schema_id) LIKE 'dbo' AND n
 GO
 
 CREATE TABLE readers (
-	ma_doc_gia CHAR(10) PRIMARY KEY,
+	ma_doc_gia CHAR(8) PRIMARY KEY,
 	ten_doc_gia VARCHAR(255),
-	ten_dang_nhap VARCHAR(50),
+	ten_dang_nhap VARCHAR(50) UNIQUE,
 	mat_khau VARCHAR(255),
 	ngay_sinh DATE,
 	dan_toc VARCHAR(10),
@@ -77,7 +109,7 @@ CREATE TABLE readers (
 	bang_cap VARCHAR(10),
 	truong VARCHAR(50),
 	lop VARCHAR(10),
-	nguoi_giam_ho CHAR(10),
+	nguoi_giam_ho CHAR(8),
 	anh_dai_dien TEXT,
 	loai VARCHAR(10) DEFAULT('Adult') CHECK (loai IN ('Adult', 'Child')),
 	ngay_tao DATETIME,
@@ -114,7 +146,12 @@ GO
 
 CREATE PROC GetLastestAdultReaderCode
 AS
-	SELECT TOP 1 SUBSTRING(ma_doc_gia, 2, 8) AS code FROM readers WHERE ma_doc_gia = 'NL%' ORDER BY ngay_tao DESC;
+	SELECT TOP 1 SUBSTRING(ma_doc_gia, 3, 7) AS code FROM readers WHERE ma_doc_gia LIKE 'NL%' ORDER BY ngay_tao DESC;
+GO
+
+CREATE PROC GetLastestChildReaderCode
+AS
+	SELECT TOP 1 SUBSTRING(ma_doc_gia, 3, 7) AS code FROM readers WHERE ma_doc_gia LIKE 'TE%' ORDER BY ngay_tao DESC;
 GO
 
 CREATE PROC GetReaders
@@ -122,6 +159,10 @@ AS
 	SELECT * FROM readers;
 GO
 
+CREATE PROC GetAdultReaders
+AS
+	SELECT * FROM readers WHERE ma_doc_gia LIKE 'NL%';
+GO
 
 CREATE PROC CreateAdultReader @MADG CHAR(10), @PhoneNumber CHAR(11), @Avatar TEXT, @DisplayName VARCHAR(255), @UserName VARCHAR(50), @Password VARCHAR(255), @Birth DATE, @Email VARCHAR(100), @Nation VARCHAR(10), @Nationality VARCHAR(20), @Sex CHAR(6), @Id VARCHAR(15), @IssuedPlace VARCHAR(20), @Job VARCHAR(20), @Degree VARCHAR(10), @CreatedDate DateTime
 AS
@@ -129,10 +170,10 @@ AS
 	VALUES (@MADG, @PhoneNumber, @DisplayName, @UserName, @Password, @Birth, @Nation, @Nationality, @Email, @Sex, @Id, @IssuedPlace, @Job, @Degree, @Avatar, @CreatedDate, 'Adult')
 GO
 
-CREATE PROC CreateChildReader @MADG CHAR(10),@PhoneNumber CHAR(11), @Avatar TEXT, @DegreeisplayName VARCHAR(255), @UserName VARCHAR(50), @Password VARCHAR(255), @Birth DATE, @Email VARCHAR(100), @Nation VARCHAR(10), @Nationality VARCHAR(20), @Sex CHAR(6), @School VARCHAR(50), @Class VARCHAR(10), @Protector CHAR(10), @CreatedDate DateTime
+CREATE PROC CreateChildReader @MADG CHAR(10),@PhoneNumber CHAR(11), @Avatar TEXT, @DisplayName VARCHAR(255), @UserName VARCHAR(50), @Password VARCHAR(255), @Birth DATE, @Email VARCHAR(100), @Sex CHAR(6), @School VARCHAR(50), @Class VARCHAR(10), @Protector CHAR(10), @CreatedDate DateTime
 AS
-	INSERT INTO readers(ma_doc_gia, so_dien_thoai, ten_doc_gia, ten_dang_nhap, mat_khau, ngay_sinh, dan_toc, quoc_tinh, email, gioi_tinh, truong, lop, nguoi_giam_ho, anh_dai_dien, ngay_tao, loai) 
-	VALUES (@MADG, @PhoneNumber, @DegreeisplayName, @UserName, @Password, @Birth, @Nation, @Nationality, @Email, @Sex, @School, @Class, @Protector, @Avatar, @CreatedDate, 'Child')
+	INSERT INTO readers(ma_doc_gia, so_dien_thoai, ten_doc_gia, ten_dang_nhap, mat_khau, ngay_sinh, email, gioi_tinh, truong, lop, nguoi_giam_ho, anh_dai_dien, ngay_tao, loai) 
+	VALUES (@MADG, @PhoneNumber, @DisplayName, @UserName, @Password, @Birth, @Email, @Sex, @School, @Class, @Protector, @Avatar, @CreatedDate, 'Child')
 GO
 
 CREATE PROC UpdateAdultReader @MADG CHAR(10), @PhoneNumber CHAR(11), @Avatar TEXT, @DisplayName VARCHAR(255), @UserName VARCHAR(50), @Password VARCHAR(255), @Birth DATE, @Email VARCHAR(100), @Nation VARCHAR(10), @Nationality VARCHAR(20), @Sex CHAR(6), @Id VARCHAR(15), @IssuedPlace VARCHAR(20), @Job VARCHAR(20), @Degree VARCHAR(10)
@@ -143,6 +184,11 @@ GO
 CREATE PROC UpdateChildReader @MADG CHAR(10), @PhoneNumber CHAR(11), @Avatar TEXT, @DisplayName VARCHAR(255), @UserName VARCHAR(50), @Password VARCHAR(255), @Birth DATE, @Email VARCHAR(100), @Nation VARCHAR(10), @Nationality VARCHAR(20), @Sex CHAR(6), @School VARCHAR(50), @Class VARCHAR(10), @Protector CHAR(10)
 AS
 	UPDATE readers SET so_dien_thoai=@PhoneNumber, ten_doc_gia=@DisplayName,ten_dang_nhap=@UserName,mat_khau=@Password,ngay_sinh=@Birth,dan_toc=@Nation,quoc_tinh=@Nationality,email=@Email,gioi_tinh=@Sex,truong=@School,lop=@Class,nguoi_giam_ho=@Protector,anh_dai_dien=@Avatar WHERE ma_doc_gia=@MADG;
+GO
+
+CREATE PROC CheckUserExist @UserName CHAR(50)
+AS
+	SELECT * FROM readers WHERE ten_dang_nhap=@UserName;
 GO
 
 CREATE PROC DeleteReader @MADG CHAR(10)
@@ -174,4 +220,28 @@ AS
 	DELETE books WHERE ma_sach=@Id;
 GO
 
+CREATE PROC FindWithBookName @Name NVARCHAR(255)
+AS
+	SELECT * FROM books WHERE ten_sach LIKE @Name + '%';
+GO
+
+CREATE PROC FindWithAuthorName @Name NVARCHAR(255)
+AS
+	SELECT * FROM books WHERE ten_tac_gia LIKE @Name + '%';
+GO
+
+CREATE PROC FindWithPublishDate @Publish DATE
+AS
+	SELECT * FROM books WHERE ngay_xuat_ban = @Publish;
+GO
+
+CREATE PROC FindWithBookTag @TagId INT
+AS
+	SELECT * FROM books WHERE the_loai = @TagId;
+GO
+
+/*============== Tag ===============*/
+CREATE PROC GetTags
+AS
+	SELECT * FROM tags;
 GO
