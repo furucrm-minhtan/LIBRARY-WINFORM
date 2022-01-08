@@ -56,8 +56,6 @@ namespace Client.Presentation
             this.Email = new System.Windows.Forms.TextBox();
             this.Email_Label = new System.Windows.Forms.Label();
             this.Birth_Date_Label = new System.Windows.Forms.Label();
-            this.User_Name = new System.Windows.Forms.TextBox();
-            this.User_Name_Label = new System.Windows.Forms.Label();
             this.Display_Name = new System.Windows.Forms.TextBox();
             this.Display_Name_Label = new System.Windows.Forms.Label();
             this.ChildRegister = new System.Windows.Forms.TabPage();
@@ -80,8 +78,6 @@ namespace Client.Presentation
             this.Email_Child = new System.Windows.Forms.TextBox();
             this.Email_Child_Label = new System.Windows.Forms.Label();
             this.Birth_Date_Child_Label = new System.Windows.Forms.Label();
-            this.User_Name_Child = new System.Windows.Forms.TextBox();
-            this.User_Name_Child_Label = new System.Windows.Forms.Label();
             this.Display_Name_Child = new System.Windows.Forms.TextBox();
             this.Display_Name_Child_Label = new System.Windows.Forms.Label();
             this.RegisterAdultValidation = new Client.Partials.Validation();
@@ -130,8 +126,6 @@ namespace Client.Presentation
             this.AdultRegister.Controls.Add(this.Email);
             this.AdultRegister.Controls.Add(this.Email_Label);
             this.AdultRegister.Controls.Add(this.Birth_Date_Label);
-            this.AdultRegister.Controls.Add(this.User_Name);
-            this.AdultRegister.Controls.Add(this.User_Name_Label);
             this.AdultRegister.Controls.Add(this.Display_Name);
             this.AdultRegister.Controls.Add(this.Display_Name_Label);
             this.AdultRegister.Location = new System.Drawing.Point(4, 22);
@@ -144,7 +138,7 @@ namespace Client.Presentation
             // 
             // Degree
             // 
-            this.Degree.Location = new System.Drawing.Point(482, 290);
+            this.Degree.Location = new System.Drawing.Point(482, 268);
             this.Degree.Name = "Degree";
             this.Degree.Size = new System.Drawing.Size(232, 20);
             this.Degree.TabIndex = 56;
@@ -152,7 +146,7 @@ namespace Client.Presentation
             // Degree_Label
             // 
             this.Degree_Label.AutoSize = true;
-            this.Degree_Label.Location = new System.Drawing.Point(419, 293);
+            this.Degree_Label.Location = new System.Drawing.Point(419, 271);
             this.Degree_Label.Name = "Degree_Label";
             this.Degree_Label.Size = new System.Drawing.Size(54, 13);
             this.Degree_Label.TabIndex = 57;
@@ -160,7 +154,7 @@ namespace Client.Presentation
             // 
             // Birth_Date
             // 
-            this.Birth_Date.Location = new System.Drawing.Point(98, 97);
+            this.Birth_Date.Location = new System.Drawing.Point(98, 52);
             this.Birth_Date.Name = "Birth_Date";
             this.Birth_Date.Size = new System.Drawing.Size(233, 20);
             this.Birth_Date.TabIndex = 55;
@@ -196,7 +190,7 @@ namespace Client.Presentation
             // 
             // Issued_Place
             // 
-            this.Issued_Place.Location = new System.Drawing.Point(482, 173);
+            this.Issued_Place.Location = new System.Drawing.Point(482, 151);
             this.Issued_Place.Name = "Issued_Place";
             this.Issued_Place.Size = new System.Drawing.Size(232, 20);
             this.Issued_Place.TabIndex = 24;
@@ -204,7 +198,7 @@ namespace Client.Presentation
             // Issued_Place_Label
             // 
             this.Issued_Place_Label.AutoSize = true;
-            this.Issued_Place_Label.Location = new System.Drawing.Point(396, 176);
+            this.Issued_Place_Label.Location = new System.Drawing.Point(396, 154);
             this.Issued_Place_Label.Name = "Issued_Place_Label";
             this.Issued_Place_Label.Size = new System.Drawing.Size(80, 13);
             this.Issued_Place_Label.TabIndex = 25;
@@ -212,7 +206,7 @@ namespace Client.Presentation
             // 
             // Job
             // 
-            this.Job.Location = new System.Drawing.Point(98, 210);
+            this.Job.Location = new System.Drawing.Point(98, 165);
             this.Job.Name = "Job";
             this.Job.Size = new System.Drawing.Size(232, 20);
             this.Job.TabIndex = 22;
@@ -220,7 +214,7 @@ namespace Client.Presentation
             // Job_Label
             // 
             this.Job_Label.AutoSize = true;
-            this.Job_Label.Location = new System.Drawing.Point(22, 213);
+            this.Job_Label.Location = new System.Drawing.Point(22, 168);
             this.Job_Label.Name = "Job_Label";
             this.Job_Label.Size = new System.Drawing.Size(70, 13);
             this.Job_Label.TabIndex = 23;
@@ -230,7 +224,7 @@ namespace Client.Presentation
             // 
             this.Sex.Controls.Add(this.radioButton2);
             this.Sex.Controls.Add(this.radioButton1);
-            this.Sex.Location = new System.Drawing.Point(98, 236);
+            this.Sex.Location = new System.Drawing.Point(98, 191);
             this.Sex.Name = "Sex";
             this.Sex.Size = new System.Drawing.Size(200, 55);
             this.Sex.TabIndex = 21;
@@ -260,7 +254,7 @@ namespace Client.Presentation
             // 
             // CMND
             // 
-            this.CMND.Location = new System.Drawing.Point(482, 133);
+            this.CMND.Location = new System.Drawing.Point(98, 266);
             this.CMND.Name = "CMND";
             this.CMND.Size = new System.Drawing.Size(232, 20);
             this.CMND.TabIndex = 19;
@@ -268,7 +262,7 @@ namespace Client.Presentation
             // Id_Label
             // 
             this.Id_Label.AutoSize = true;
-            this.Id_Label.Location = new System.Drawing.Point(437, 136);
+            this.Id_Label.Location = new System.Drawing.Point(53, 269);
             this.Id_Label.Name = "Id_Label";
             this.Id_Label.Size = new System.Drawing.Size(39, 13);
             this.Id_Label.TabIndex = 20;
@@ -276,7 +270,7 @@ namespace Client.Presentation
             // 
             // Nationality
             // 
-            this.Nationality.Location = new System.Drawing.Point(482, 253);
+            this.Nationality.Location = new System.Drawing.Point(482, 231);
             this.Nationality.Name = "Nationality";
             this.Nationality.Size = new System.Drawing.Size(232, 20);
             this.Nationality.TabIndex = 17;
@@ -284,7 +278,7 @@ namespace Client.Presentation
             // Nationality_Label
             // 
             this.Nationality_Label.AutoSize = true;
-            this.Nationality_Label.Location = new System.Drawing.Point(419, 256);
+            this.Nationality_Label.Location = new System.Drawing.Point(419, 234);
             this.Nationality_Label.Name = "Nationality_Label";
             this.Nationality_Label.Size = new System.Drawing.Size(57, 13);
             this.Nationality_Label.TabIndex = 18;
@@ -292,7 +286,7 @@ namespace Client.Presentation
             // 
             // Nation
             // 
-            this.Nation.Location = new System.Drawing.Point(482, 213);
+            this.Nation.Location = new System.Drawing.Point(482, 191);
             this.Nation.Name = "Nation";
             this.Nation.Size = new System.Drawing.Size(232, 20);
             this.Nation.TabIndex = 15;
@@ -300,7 +294,7 @@ namespace Client.Presentation
             // Nation_Label
             // 
             this.Nation_Label.AutoSize = true;
-            this.Nation_Label.Location = new System.Drawing.Point(427, 216);
+            this.Nation_Label.Location = new System.Drawing.Point(427, 194);
             this.Nation_Label.Name = "Nation_Label";
             this.Nation_Label.Size = new System.Drawing.Size(49, 13);
             this.Nation_Label.TabIndex = 16;
@@ -308,7 +302,7 @@ namespace Client.Presentation
             // 
             // Phone
             // 
-            this.Phone.Location = new System.Drawing.Point(98, 173);
+            this.Phone.Location = new System.Drawing.Point(98, 128);
             this.Phone.Name = "Phone";
             this.Phone.Size = new System.Drawing.Size(232, 20);
             this.Phone.TabIndex = 13;
@@ -316,7 +310,7 @@ namespace Client.Presentation
             // Phone_Label
             // 
             this.Phone_Label.AutoSize = true;
-            this.Phone_Label.Location = new System.Drawing.Point(17, 176);
+            this.Phone_Label.Location = new System.Drawing.Point(17, 131);
             this.Phone_Label.Name = "Phone_Label";
             this.Phone_Label.Size = new System.Drawing.Size(75, 13);
             this.Phone_Label.TabIndex = 14;
@@ -325,7 +319,7 @@ namespace Client.Presentation
             // Sex_Label
             // 
             this.Sex_Label.AutoSize = true;
-            this.Sex_Label.Location = new System.Drawing.Point(41, 257);
+            this.Sex_Label.Location = new System.Drawing.Point(41, 212);
             this.Sex_Label.Name = "Sex_Label";
             this.Sex_Label.Size = new System.Drawing.Size(51, 13);
             this.Sex_Label.TabIndex = 10;
@@ -333,7 +327,7 @@ namespace Client.Presentation
             // 
             // Email
             // 
-            this.Email.Location = new System.Drawing.Point(98, 137);
+            this.Email.Location = new System.Drawing.Point(98, 92);
             this.Email.Name = "Email";
             this.Email.Size = new System.Drawing.Size(232, 20);
             this.Email.TabIndex = 7;
@@ -341,7 +335,7 @@ namespace Client.Presentation
             // Email_Label
             // 
             this.Email_Label.AutoSize = true;
-            this.Email_Label.Location = new System.Drawing.Point(60, 140);
+            this.Email_Label.Location = new System.Drawing.Point(60, 95);
             this.Email_Label.Name = "Email_Label";
             this.Email_Label.Size = new System.Drawing.Size(32, 13);
             this.Email_Label.TabIndex = 8;
@@ -350,27 +344,11 @@ namespace Client.Presentation
             // Birth_Date_Label
             // 
             this.Birth_Date_Label.AutoSize = true;
-            this.Birth_Date_Label.Location = new System.Drawing.Point(36, 97);
+            this.Birth_Date_Label.Location = new System.Drawing.Point(36, 52);
             this.Birth_Date_Label.Name = "Birth_Date_Label";
             this.Birth_Date_Label.Size = new System.Drawing.Size(56, 13);
             this.Birth_Date_Label.TabIndex = 6;
             this.Birth_Date_Label.Text = "Ngày Sinh";
-            // 
-            // User_Name
-            // 
-            this.User_Name.Location = new System.Drawing.Point(98, 57);
-            this.User_Name.Name = "User_Name";
-            this.User_Name.Size = new System.Drawing.Size(232, 20);
-            this.User_Name.TabIndex = 3;
-            // 
-            // User_Name_Label
-            // 
-            this.User_Name_Label.AutoSize = true;
-            this.User_Name_Label.Location = new System.Drawing.Point(8, 60);
-            this.User_Name_Label.Name = "User_Name_Label";
-            this.User_Name_Label.Size = new System.Drawing.Size(84, 13);
-            this.User_Name_Label.TabIndex = 4;
-            this.User_Name_Label.Text = "Tên Đăng Nhập";
             // 
             // Display_Name
             // 
@@ -407,8 +385,6 @@ namespace Client.Presentation
             this.ChildRegister.Controls.Add(this.Email_Child);
             this.ChildRegister.Controls.Add(this.Email_Child_Label);
             this.ChildRegister.Controls.Add(this.Birth_Date_Child_Label);
-            this.ChildRegister.Controls.Add(this.User_Name_Child);
-            this.ChildRegister.Controls.Add(this.User_Name_Child_Label);
             this.ChildRegister.Controls.Add(this.Display_Name_Child);
             this.ChildRegister.Controls.Add(this.Display_Name_Child_Label);
             this.ChildRegister.Location = new System.Drawing.Point(4, 22);
@@ -421,14 +397,14 @@ namespace Client.Presentation
             // 
             // Birth_Date_Child
             // 
-            this.Birth_Date_Child.Location = new System.Drawing.Point(97, 97);
+            this.Birth_Date_Child.Location = new System.Drawing.Point(97, 53);
             this.Birth_Date_Child.Name = "Birth_Date_Child";
             this.Birth_Date_Child.Size = new System.Drawing.Size(233, 20);
             this.Birth_Date_Child.TabIndex = 54;
             // 
             // SignupChild
             // 
-            this.SignupChild.Location = new System.Drawing.Point(224, 336);
+            this.SignupChild.Location = new System.Drawing.Point(235, 273);
             this.SignupChild.Name = "SignupChild";
             this.SignupChild.Size = new System.Drawing.Size(313, 33);
             this.SignupChild.TabIndex = 53;
@@ -439,7 +415,7 @@ namespace Client.Presentation
             // Protector
             // 
             this.Protector.FormattingEnabled = true;
-            this.Protector.Location = new System.Drawing.Point(97, 209);
+            this.Protector.Location = new System.Drawing.Point(97, 165);
             this.Protector.Name = "Protector";
             this.Protector.Size = new System.Drawing.Size(233, 21);
             this.Protector.TabIndex = 52;
@@ -482,7 +458,7 @@ namespace Client.Presentation
             // Protector_Label
             // 
             this.Protector_Label.AutoSize = true;
-            this.Protector_Label.Location = new System.Drawing.Point(17, 213);
+            this.Protector_Label.Location = new System.Drawing.Point(17, 169);
             this.Protector_Label.Name = "Protector_Label";
             this.Protector_Label.Size = new System.Drawing.Size(74, 13);
             this.Protector_Label.TabIndex = 47;
@@ -492,7 +468,7 @@ namespace Client.Presentation
             // 
             this.Sex_Child.Controls.Add(this.radioButton3);
             this.Sex_Child.Controls.Add(this.radioButton4);
-            this.Sex_Child.Location = new System.Drawing.Point(98, 236);
+            this.Sex_Child.Location = new System.Drawing.Point(98, 192);
             this.Sex_Child.Name = "Sex_Child";
             this.Sex_Child.Size = new System.Drawing.Size(200, 55);
             this.Sex_Child.TabIndex = 45;
@@ -538,7 +514,7 @@ namespace Client.Presentation
             // 
             // Phone_Child
             // 
-            this.Phone_Child.Location = new System.Drawing.Point(98, 173);
+            this.Phone_Child.Location = new System.Drawing.Point(98, 129);
             this.Phone_Child.Name = "Phone_Child";
             this.Phone_Child.Size = new System.Drawing.Size(232, 20);
             this.Phone_Child.TabIndex = 37;
@@ -546,7 +522,7 @@ namespace Client.Presentation
             // Phone_Child_Label
             // 
             this.Phone_Child_Label.AutoSize = true;
-            this.Phone_Child_Label.Location = new System.Drawing.Point(17, 176);
+            this.Phone_Child_Label.Location = new System.Drawing.Point(17, 132);
             this.Phone_Child_Label.Name = "Phone_Child_Label";
             this.Phone_Child_Label.Size = new System.Drawing.Size(75, 13);
             this.Phone_Child_Label.TabIndex = 38;
@@ -555,7 +531,7 @@ namespace Client.Presentation
             // label18
             // 
             this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(41, 257);
+            this.label18.Location = new System.Drawing.Point(41, 213);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(51, 13);
             this.label18.TabIndex = 36;
@@ -563,7 +539,7 @@ namespace Client.Presentation
             // 
             // Email_Child
             // 
-            this.Email_Child.Location = new System.Drawing.Point(98, 137);
+            this.Email_Child.Location = new System.Drawing.Point(98, 93);
             this.Email_Child.Name = "Email_Child";
             this.Email_Child.Size = new System.Drawing.Size(232, 20);
             this.Email_Child.TabIndex = 34;
@@ -571,7 +547,7 @@ namespace Client.Presentation
             // Email_Child_Label
             // 
             this.Email_Child_Label.AutoSize = true;
-            this.Email_Child_Label.Location = new System.Drawing.Point(60, 140);
+            this.Email_Child_Label.Location = new System.Drawing.Point(60, 96);
             this.Email_Child_Label.Name = "Email_Child_Label";
             this.Email_Child_Label.Size = new System.Drawing.Size(32, 13);
             this.Email_Child_Label.TabIndex = 35;
@@ -580,27 +556,11 @@ namespace Client.Presentation
             // Birth_Date_Child_Label
             // 
             this.Birth_Date_Child_Label.AutoSize = true;
-            this.Birth_Date_Child_Label.Location = new System.Drawing.Point(36, 97);
+            this.Birth_Date_Child_Label.Location = new System.Drawing.Point(36, 53);
             this.Birth_Date_Child_Label.Name = "Birth_Date_Child_Label";
             this.Birth_Date_Child_Label.Size = new System.Drawing.Size(56, 13);
             this.Birth_Date_Child_Label.TabIndex = 33;
             this.Birth_Date_Child_Label.Text = "Ngày Sinh";
-            // 
-            // User_Name_Child
-            // 
-            this.User_Name_Child.Location = new System.Drawing.Point(98, 57);
-            this.User_Name_Child.Name = "User_Name_Child";
-            this.User_Name_Child.Size = new System.Drawing.Size(232, 20);
-            this.User_Name_Child.TabIndex = 30;
-            // 
-            // User_Name_Child_Label
-            // 
-            this.User_Name_Child_Label.AutoSize = true;
-            this.User_Name_Child_Label.Location = new System.Drawing.Point(8, 60);
-            this.User_Name_Child_Label.Name = "User_Name_Child_Label";
-            this.User_Name_Child_Label.Size = new System.Drawing.Size(84, 13);
-            this.User_Name_Child_Label.TabIndex = 31;
-            this.User_Name_Child_Label.Text = "Tên Đăng Nhập";
             // 
             // Display_Name_Child
             // 
@@ -650,8 +610,6 @@ namespace Client.Presentation
         private System.Windows.Forms.TextBox Display_Name;
         private System.Windows.Forms.Label Display_Name_Label;
         private System.Windows.Forms.Label Birth_Date_Label;
-        private System.Windows.Forms.TextBox User_Name;
-        private System.Windows.Forms.Label User_Name_Label;
         private System.Windows.Forms.TextBox Nationality;
         private System.Windows.Forms.Label Nationality_Label;
         private System.Windows.Forms.TextBox Nation;
@@ -689,8 +647,6 @@ namespace Client.Presentation
         private System.Windows.Forms.TextBox Email_Child;
         private System.Windows.Forms.Label Email_Child_Label;
         private System.Windows.Forms.Label Birth_Date_Child_Label;
-        private System.Windows.Forms.TextBox User_Name_Child;
-        private System.Windows.Forms.Label User_Name_Child_Label;
         private System.Windows.Forms.TextBox Display_Name_Child;
         private System.Windows.Forms.Label Display_Name_Child_Label;
         private System.Windows.Forms.Button SignupAdult;

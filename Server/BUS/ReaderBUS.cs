@@ -40,7 +40,7 @@ namespace Server.BUS
                 data.Password = Helpers.hashPassword(Helpers.getRandomString(10));
                 if (ReaderDAO.instance.insert(data))
                 {
-                    mail.setBody($"password: {password}");
+                    mail.setBody($"mã đọc giả: {data.MADG} \npassword: {password}");
                     mail.setSubject($"Đăng Ký Thành Viên Thư Viện Thành Công");
                     mail.setRecipients(new List<string> { data.Email });
                     mail.send();
@@ -79,7 +79,7 @@ namespace Server.BUS
 
         public bool checkUserExist(ReaderDTO data)
         {
-            return ReaderDAO.instance.checkUserExist(data.UserName);
+            return ReaderDAO.instance.checkUserExist(data.MADG);
         }
     }
 }

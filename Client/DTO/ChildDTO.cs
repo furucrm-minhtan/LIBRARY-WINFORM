@@ -36,25 +36,6 @@ namespace Client.DTO
                     }
                 },
                 {
-                    fieldToDisplayForm["UserName"].fieldName,
-                    new ValidationOptions {
-                        IsRequired = true,
-                        MaxLength = 50,
-                        TypeControl = TypeControl.Text,
-                        ErrorMessages = new Dictionary<ErrorType, string>
-                        {
-                            {
-                                ErrorType.Require,
-                                fieldToDisplayForm["UserName"].errorMessages[ErrorType.Require]
-                            },
-                            {
-                                ErrorType.Length,
-                                fieldToDisplayForm["UserName"].errorMessages[ErrorType.Length]
-                            }
-                        }
-                    }
-                },
-                {
                     fieldToDisplayForm["Email"].fieldName,
                     new ValidationOptions {
                         IsRequired = true,

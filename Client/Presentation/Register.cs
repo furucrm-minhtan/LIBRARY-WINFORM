@@ -44,11 +44,6 @@ namespace Client.Presentation
                     Avatar.Image.Dispose();
                     Helpers.copyFile(filePath, data.Avatar);
                 }
-                if(bus.checkUserExist(data))
-                {
-                    MessageBox.Show("Tên Tài Khoản Đã Tồn Tại");
-                    return;
-                }
                 if (bus.store(data))
                 {
                     MessageBox.Show("Tạo Tài Khoản Thành Công");
@@ -81,11 +76,6 @@ namespace Client.Presentation
                     Helpers.copyFile(filePath, data.Avatar);
                 }
                 
-                if (bus.checkUserExist(data))
-                {
-                    MessageBox.Show("Tên Tài Khoản Đã Tồn Tại");
-                    return;
-                }
                 if (bus.store(data))
                 {
                     MessageBox.Show("Tạo Tài Khoản Thành Công");
@@ -102,7 +92,6 @@ namespace Client.Presentation
         {
             AdultDTO reader = new AdultDTO();
             reader.DisplayName = Display_Name.Text;
-            reader.UserName = User_Name.Text;
             reader.Birth = Birth_Date.Value.Date.ToString("yyyy-MM-dd");
             reader.Email = Email.Text;
             reader.PhoneNumber = Phone.Text;
@@ -123,7 +112,6 @@ namespace Client.Presentation
         {
             ChildDTO reader = new ChildDTO();
             reader.DisplayName = Display_Name_Child.Text;
-            reader.UserName = User_Name_Child.Text;
             reader.Birth = Birth_Date_Child.Value.Date.ToString("yyyy-MM-dd"); ;
             reader.Email = Email_Child.Text;
             reader.Sex = Sex.Controls.OfType<RadioButton>().FirstOrDefault(r => r.Checked)?.Text;
@@ -169,7 +157,7 @@ namespace Client.Presentation
             Birth_Date_Child.Format = DateTimePickerFormat.Custom;
             Protector.DisplayMember = "label";
             Protector.ValueMember = "value";
-            Protector.DataSource = Helpers.createOptionsForCombobox(new List<Object>(bus.getAdultReader()), "UserName", "MADG", true);
+            Protector.DataSource = Helpers.createOptionsForCombobox(new List<Object>(bus.getAdultReader()), "MADG", "MADG", true);
             setValidationForm();
         }
 
@@ -180,7 +168,6 @@ namespace Client.Presentation
             List<Control> adultControls = new List<Control>()
             {
                 Display_Name,
-                User_Name,
                 Phone,
                 Email,
                 Job,
@@ -197,7 +184,6 @@ namespace Client.Presentation
             List<Control> childControls = new List<Control>()
             {
                 Display_Name_Child,
-                User_Name_Child,
                 Phone_Child,
                 Email_Child,
                 School,
@@ -243,46 +229,6 @@ namespace Client.Presentation
                                         {
                                             "length",
                                             "255"
-                                        }
-                                    }
-                                )
-                            }
-                        }
-                    }
-                },
-                {
-                    "UserName",
-                    new InputValidationSetting
-                    {
-                        fieldName = "User_Name",
-                        errorMessages = new Dictionary<ErrorType, string>
-                        {
-                            {
-                                ErrorType.Require,
-                                CustomLabel.format(
-                                    "require",
-                                    new Dictionary<string, string>
-                                    {
-                                        {
-                                            "fieldName",
-                                            User_Name_Label.Text
-                                        }
-                                    }
-                                )
-                            },
-                             {
-                                ErrorType.Length,
-                                CustomLabel.format(
-                                    "length",
-                                    new Dictionary<string, string>
-                                    {
-                                        {
-                                            "fieldName",
-                                            User_Name_Label.Text
-                                        },
-                                        {
-                                            "length",
-                                            "50"
                                         }
                                     }
                                 )
@@ -605,46 +551,6 @@ namespace Client.Presentation
                     }
                 },
                 {
-                    "UserName",
-                    new InputValidationSetting
-                    {
-                        fieldName = "User_Name_Child",
-                        errorMessages = new Dictionary<ErrorType, string>
-                        {
-                            {
-                                ErrorType.Require,
-                                CustomLabel.format(
-                                    "require",
-                                    new Dictionary<string, string>
-                                    {
-                                        {
-                                            "fieldName",
-                                            User_Name_Child_Label.Text
-                                        }
-                                    }
-                                )
-                            },
-                             {
-                                ErrorType.Length,
-                                CustomLabel.format(
-                                    "length",
-                                    new Dictionary<string, string>
-                                    {
-                                        {
-                                            "fieldName",
-                                            User_Name_Child_Label.Text
-                                        },
-                                        {
-                                            "length",
-                                            "50"
-                                        }
-                                    }
-                                )
-                            }
-                        }
-                    }
-                },
-                {
                     "Email",
                     new InputValidationSetting
                     {
@@ -708,6 +614,19 @@ namespace Client.Presentation
                                 ErrorType.Require,
                                 CustomLabel.format(
                                     "require",
+                                    new Dictionary<string, string>
+                                    {
+                                        {
+                                            "fieldName",
+                                            Phone_Child_Label.Text
+                                        }
+                                    }
+                                )
+                            },
+                            {
+                                ErrorType.Format,
+                                CustomLabel.format(
+                                    "format",
                                     new Dictionary<string, string>
                                     {
                                         {

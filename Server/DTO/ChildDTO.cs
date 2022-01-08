@@ -19,7 +19,6 @@ namespace Server.DTO
         protected static new Dictionary<String, String> mappingParams = new Dictionary<String, String>()
 		{
 			{"DisplayName", "DisplayName"},
-			{"UserName", "UserName"},
 			{"Password", "Password"},
 			{"Birth", "Birth"},
 			{"Email", "Email"},
@@ -35,8 +34,7 @@ namespace Server.DTO
 		protected static new Dictionary<String, String> mappingTableField = new Dictionary<String, String>()
 		{
 			{"MADG", "ma_doc_gia" },
-			{"DisplayName", "ten_doc_gia"},
-			{"UserName", "ten_dang_nhap"},
+			{"DisplayName", "ho_ten"},
 			{"Password", "mat_khau"},
 			{"Birth", "ngay_sinh"},
 			{"Email", "email"},
