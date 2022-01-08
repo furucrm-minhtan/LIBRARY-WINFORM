@@ -125,7 +125,7 @@ CREATE TABLE tags(
 )
 
 CREATE TABLE books (
-	ma_sach CHAR(11) PRIMARY KEY,
+	ma_sach CHAR(9) PRIMARY KEY,
 	ten_sach VARCHAR(255),
 	ten_tac_gia VARCHAR(255),
 	mo_ta TEXT,
@@ -164,24 +164,24 @@ AS
 	SELECT * FROM readers WHERE ma_doc_gia LIKE 'NL%';
 GO
 
-CREATE PROC CreateAdultReader @MADG CHAR(10), @PhoneNumber CHAR(11), @Avatar TEXT, @DisplayName VARCHAR(255), @UserName VARCHAR(50), @Password VARCHAR(255), @Birth DATE, @Email VARCHAR(100), @Nation VARCHAR(10), @Nationality VARCHAR(20), @Sex CHAR(6), @Id VARCHAR(15), @IssuedPlace VARCHAR(20), @Job VARCHAR(20), @Degree VARCHAR(10), @CreatedDate DateTime
+CREATE PROC CreateAdultReader @MADG CHAR(8), @PhoneNumber CHAR(11), @Avatar TEXT, @DisplayName VARCHAR(255), @UserName VARCHAR(50), @Password VARCHAR(255), @Birth DATE, @Email VARCHAR(100), @Nation VARCHAR(10), @Nationality VARCHAR(20), @Sex CHAR(6), @Id VARCHAR(15), @IssuedPlace VARCHAR(20), @Job VARCHAR(20), @Degree VARCHAR(10), @CreatedDate DateTime
 AS
 	INSERT INTO readers(ma_doc_gia, so_dien_thoai, ten_doc_gia, ten_dang_nhap, mat_khau, ngay_sinh, dan_toc, quoc_tinh, email, gioi_tinh, cmnd, noi_cap, nghe_nghiep, bang_cap, anh_dai_dien, ngay_tao, loai) 
 	VALUES (@MADG, @PhoneNumber, @DisplayName, @UserName, @Password, @Birth, @Nation, @Nationality, @Email, @Sex, @Id, @IssuedPlace, @Job, @Degree, @Avatar, @CreatedDate, 'Adult')
 GO
 
-CREATE PROC CreateChildReader @MADG CHAR(10),@PhoneNumber CHAR(11), @Avatar TEXT, @DisplayName VARCHAR(255), @UserName VARCHAR(50), @Password VARCHAR(255), @Birth DATE, @Email VARCHAR(100), @Sex CHAR(6), @School VARCHAR(50), @Class VARCHAR(10), @Protector CHAR(10), @CreatedDate DateTime
+CREATE PROC CreateChildReader @MADG CHAR(8),@PhoneNumber CHAR(11), @Avatar TEXT, @DisplayName VARCHAR(255), @UserName VARCHAR(50), @Password VARCHAR(255), @Birth DATE, @Email VARCHAR(100), @Sex CHAR(6), @School VARCHAR(50), @Class VARCHAR(10), @Protector CHAR(10), @CreatedDate DateTime
 AS
 	INSERT INTO readers(ma_doc_gia, so_dien_thoai, ten_doc_gia, ten_dang_nhap, mat_khau, ngay_sinh, email, gioi_tinh, truong, lop, nguoi_giam_ho, anh_dai_dien, ngay_tao, loai) 
 	VALUES (@MADG, @PhoneNumber, @DisplayName, @UserName, @Password, @Birth, @Email, @Sex, @School, @Class, @Protector, @Avatar, @CreatedDate, 'Child')
 GO
 
-CREATE PROC UpdateAdultReader @MADG CHAR(10), @PhoneNumber CHAR(11), @Avatar TEXT, @DisplayName VARCHAR(255), @UserName VARCHAR(50), @Password VARCHAR(255), @Birth DATE, @Email VARCHAR(100), @Nation VARCHAR(10), @Nationality VARCHAR(20), @Sex CHAR(6), @Id VARCHAR(15), @IssuedPlace VARCHAR(20), @Job VARCHAR(20), @Degree VARCHAR(10)
+CREATE PROC UpdateAdultReader @MADG CHAR(8), @PhoneNumber CHAR(11), @Avatar TEXT, @DisplayName VARCHAR(255), @UserName VARCHAR(50), @Password VARCHAR(255), @Birth DATE, @Email VARCHAR(100), @Nation VARCHAR(10), @Nationality VARCHAR(20), @Sex CHAR(6), @Id VARCHAR(15), @IssuedPlace VARCHAR(20), @Job VARCHAR(20), @Degree VARCHAR(10)
 AS
 	UPDATE readers SET so_dien_thoai=@PhoneNumber, ten_doc_gia=@DisplayName,ten_dang_nhap=@UserName,mat_khau=@Password,ngay_sinh=@Birth,dan_toc=@Nation,quoc_tinh=@Nationality,email=@Email,gioi_tinh=@Sex,cmnd=@Id,noi_cap=@IssuedPlace,nghe_nghiep=@Job,bang_cap=@Degree,anh_dai_dien=@Avatar WHERE ma_doc_gia=@MADG;
 GO
 
-CREATE PROC UpdateChildReader @MADG CHAR(10), @PhoneNumber CHAR(11), @Avatar TEXT, @DisplayName VARCHAR(255), @UserName VARCHAR(50), @Password VARCHAR(255), @Birth DATE, @Email VARCHAR(100), @Nation VARCHAR(10), @Nationality VARCHAR(20), @Sex CHAR(6), @School VARCHAR(50), @Class VARCHAR(10), @Protector CHAR(10)
+CREATE PROC UpdateChildReader @MADG CHAR(8), @PhoneNumber CHAR(11), @Avatar TEXT, @DisplayName VARCHAR(255), @UserName VARCHAR(50), @Password VARCHAR(255), @Birth DATE, @Email VARCHAR(100), @Nation VARCHAR(10), @Nationality VARCHAR(20), @Sex CHAR(6), @School VARCHAR(50), @Class VARCHAR(10), @Protector CHAR(10)
 AS
 	UPDATE readers SET so_dien_thoai=@PhoneNumber, ten_doc_gia=@DisplayName,ten_dang_nhap=@UserName,mat_khau=@Password,ngay_sinh=@Birth,dan_toc=@Nation,quoc_tinh=@Nationality,email=@Email,gioi_tinh=@Sex,truong=@School,lop=@Class,nguoi_giam_ho=@Protector,anh_dai_dien=@Avatar WHERE ma_doc_gia=@MADG;
 GO
@@ -204,16 +204,16 @@ AS
 	SELECT * FROM books;
 GO
 
-CREATE PROC CreateBook @Name VARCHAR(255), @Author VARCHAR(255), @Description TEXT, @Cover VARCHAR(255), @Publish DATE, @ISBN VARCHAR(20), @Position VARCHAR(10), @Remain INT
-AS
-	INSERT INTO books(ten_sach, ten_tac_gia, mo_ta, trang_bia, ngay_xuat_ban, ISBN, vi_tri, so_luong_ton_kho)
-	VALUES(@Name, @Author, @Description, @Cover, @Publish, @ISBN, @Position, @Remain);
-GO
+--CREATE PROC CreateBook @Name VARCHAR(255), @Author VARCHAR(255), @Description TEXT, @Cover VARCHAR(255), @Publish DATE, @ISBN VARCHAR(20), @Position VARCHAR(10), @Remain INT
+--AS
+--	INSERT INTO books(ten_sach, ten_tac_gia, mo_ta, trang_bia, ngay_xuat_ban, ISBN, vi_tri, so_luong_ton_kho)
+--	VALUES(@Name, @Author, @Description, @Cover, @Publish, @ISBN, @Position, @Remain);
+--GO
 
-CREATE PROC UpdateBook @Id INT, @Name VARCHAR(255), @Author VARCHAR(255), @Description TEXT, @Cover VARCHAR(255), @Publish DATE, @ISBN VARCHAR(20), @Position VARCHAR(10), @Remain INT
-AS
-	UPDATE books SET ten_sach=@Name,ten_tac_gia=@Author,mo_ta=@Description,trang_bia=@Cover,ngay_xuat_ban=@Publish,ISBN=@ISBN,vi_tri=@Position,so_luong_ton_kho=@Remain WHERE ma_sach = @Id;
-GO
+--CREATE PROC UpdateBook @Id INT, @Name VARCHAR(255), @Author VARCHAR(255), @Description TEXT, @Cover VARCHAR(255), @Publish DATE, @ISBN VARCHAR(20), @Position VARCHAR(10), @Remain INT
+--AS
+--	UPDATE books SET ten_sach=@Name,ten_tac_gia=@Author,mo_ta=@Description,trang_bia=@Cover,ngay_xuat_ban=@Publish,ISBN=@ISBN,vi_tri=@Position,so_luong_ton_kho=@Remain WHERE ma_sach = @Id;
+--GO
 
 CREATE PROC DeleteBook @Id INT
 AS
