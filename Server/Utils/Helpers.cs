@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -23,6 +24,16 @@ namespace Server.Utils
             String root = AppDomain.CurrentDomain.BaseDirectory;
 
             return $"{root}{fileName}";
+        }
+
+        public static Byte[] convertImageToBinary(Image img)
+        {
+            return (Byte[])new ImageConverter().ConvertTo(img, typeof(Byte[]));
+        }
+        
+        public static string convertImageToBinaryString(Image img)
+        {
+            return Encoding.UTF8.GetString(convertImageToBinary(img));
         }
 
         public static string getRootFolderApplication()
@@ -70,6 +81,23 @@ namespace Server.Utils
                 System.String chars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
                 System.Random random = new System.Random(System.BitConverter.ToInt32(seedBuffer, 0));
                 return new System.String(Enumerable.Repeat(chars, length).Select(s => s[random.Next(s.Length)]).ToArray());
+            }
+        }
+
+        public static string imageToBase64(string _imagePath)
+        {
+            string _base64String = null;
+
+            using (System.Drawing.Image _image = System.Drawing.Image.FromFile(_imagePath))
+            {
+                using (MemoryStream _mStream = new MemoryStream())
+                {
+                    _image.Save(_mStream, _image.RawFormat);
+                    byte[] _imageBytes = _mStream.ToArray();
+                    _base64String = Convert.ToBase64String(_imageBytes);
+
+                    return "data:image/jpg;base64," + _base64String;
+                }
             }
         }
 

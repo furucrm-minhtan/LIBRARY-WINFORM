@@ -20,7 +20,7 @@ namespace Client.DTO
                     fieldToDisplayForm["DisplayName"].fieldName,
                     new ValidationOptions {
                         IsRequired = true,
-                        MaxLength = 255,
+                        MaxLength = 20,
                         TypeControl = TypeControl.Text,
                         ErrorMessages = new Dictionary<ErrorType, string>
                         {
@@ -63,7 +63,7 @@ namespace Client.DTO
                     fieldToDisplayForm["PhoneNumber"].fieldName,
                     new ValidationOptions {
                         IsRequired = true,
-                        MaxLength = 11,
+                        MaxLength = 15,
                         RegExString = @"^[0-9]*$",
                         TypeControl = TypeControl.Text,
                         ErrorMessages = new Dictionary<ErrorType, string>
@@ -84,10 +84,40 @@ namespace Client.DTO
                     }
                 },
                 {
+                    fieldToDisplayForm["Nation"].fieldName,
+                    new ValidationOptions {
+                        IsRequired = false,
+                        MaxLength = 10,
+                        TypeControl = TypeControl.Text,
+                        ErrorMessages = new Dictionary<ErrorType, string>
+                        {
+                            {
+                                ErrorType.Length,
+                                fieldToDisplayForm["Nation"].errorMessages[ErrorType.Length]
+                            }
+                        }
+                    }
+                },
+                {
+                    fieldToDisplayForm["Nationality"].fieldName,
+                    new ValidationOptions {
+                        IsRequired = false,
+                        MaxLength = 10,
+                        TypeControl = TypeControl.Text,
+                        ErrorMessages = new Dictionary<ErrorType, string>
+                        {
+                            {
+                                ErrorType.Length,
+                                fieldToDisplayForm["Nationality"].errorMessages[ErrorType.Length]
+                            }
+                        }
+                    }
+                },
+                {
                     fieldToDisplayForm["School"].fieldName,
                     new ValidationOptions {
                         IsRequired = false,
-                        MaxLength = 50,
+                        MaxLength = 30,
                         TypeControl = TypeControl.Text,
                         ErrorMessages = new Dictionary<ErrorType, string>
                         {
@@ -102,7 +132,7 @@ namespace Client.DTO
                     fieldToDisplayForm["Class"].fieldName,
                     new ValidationOptions {
                         IsRequired = false,
-                        MaxLength = 10,
+                        MaxLength = 5,
                         TypeControl = TypeControl.Text,
                         ErrorMessages = new Dictionary<ErrorType, string>
                         {

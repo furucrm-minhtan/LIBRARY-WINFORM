@@ -33,21 +33,21 @@ namespace Server.DTO
 
 		protected static new Dictionary<String, String> mappingTableField = new Dictionary<String, String>()
 		{
-			{"MADG", "ma_doc_gia" },
-			{"DisplayName", "ho_ten"},
-			{"Password", "mat_khau"},
-			{"Birth", "ngay_sinh"},
-			{"Email", "email"},
-			{"Sex", "gioi_tinh"},
-			{"Avatar", "anh_dai_dien"},
-			{"PhoneNumber", "so_dien_thoai"},
-			{"Nation", "dan_toc"},
-			{"Nationality", "quoc_tinh"},
-			{"Type", "loai"},
-			{"CreatedDate", "ngay_tao"},
-			{"School", "truong"},
-			{"Class", "lop"},
-			{"Protector", "nguoi_giam_ho"}
+			{"MADG", "MaDocGia" },
+			{"DisplayName", "TenDocGia"},
+			{"Password", "MatKhau"},
+			{"Birth", "NgaySinh"},
+			{"Email", "Email"},
+			{"Sex", "GioiTinh"},
+			{"Avatar", "AnhDaiDien"},
+			{"PhoneNumber", "SDTDocGia"},
+			{"Nation", "DanToc"},
+			{"Nationality", "QuocTich"},
+			{"Type", "Loai"},
+			{"CreatedDate", "NgayTao"},
+			{"School", "TruongHoc"},
+			{"Class", "LopHoc"},
+			{"Protector", "MaNguoiGiamHo"}
 		};
 
 		public static new Dictionary<string, string> getMapping()

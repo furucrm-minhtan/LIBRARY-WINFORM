@@ -1,139 +1,139 @@
-ma_sach,ten_sach,ten_tac_gia,mo_ta,ngay_xuat_ban,so_luong_ton_kho,ngay_tao,vi_tri
-1,Benztropine Mesylate,Barbara-anne Wooffitt,"Mauris enim leo, rhoncus sed, vestibulum sit amet, cursus id, turpis. Integer aliquet, massa id lobortis convallis, tortor risus dapibus augue, vel accumsan tellus nisi eu orci. Mauris lacinia sapien quis libero.",2021-07-28,5,2021-01-10,1
-2,Western Water Hemp,Mickie Haugeh,"Curabitur in libero ut massa volutpat convallis. Morbi odio odio, elementum eu, interdum eu, tincidunt in, leo. Maecenas pulvinar lobortis est.",2021-06-25,7,2021-03-10,2
-3,Doxepin Hydrochloride,Marius Revington,"Fusce consequat. Nulla nisl. Nunc nisl.
+ma_sach,ten_sach,ten_tac_gia,mo_ta,ngay_xuat_ban,so_luong_ton_kho,ngay_tao,vi_tri,the_loai
+CT0000001,Benztropine Mesylate,Barbara-anne Wooffitt,"Mauris enim leo, rhoncus sed, vestibulum sit amet, cursus id, turpis. Integer aliquet, massa id lobortis convallis, tortor risus dapibus augue, vel accumsan tellus nisi eu orci. Mauris lacinia sapien quis libero.",7/28/2021,5,1/10/2021,1,1
+CT0000002,Western Water Hemp,Mickie Haugeh,"Curabitur in libero ut massa volutpat convallis. Morbi odio odio, elementum eu, interdum eu, tincidunt in, leo. Maecenas pulvinar lobortis est.",6/25/2021,7,3/10/2021,2,1
+CT0000003,Doxepin Hydrochloride,Marius Revington,"Fusce consequat. Nulla nisl. Nunc nisl.
 
-Duis bibendum, felis sed interdum venenatis, turpis enim blandit mi, in porttitor pede justo eu massa. Donec dapibus. Duis at velit eu est congue elementum.",2021-07-05,59,2021-01-06,3
-4,Proforce Commercial Products,Randi Gutteridge,Praesent id massa id nisl venenatis lacinia. Aenean sit amet justo. Morbi ut odio.,2021-01-27,36,2021-04-30,4
-5,Guaifenesin,Winnie Gott,"Aliquam quis turpis eget elit sodales scelerisque. Mauris sit amet eros. Suspendisse accumsan tortor quis turpis.
+Duis bibendum, felis sed interdum venenatis, turpis enim blandit mi, in porttitor pede justo eu massa. Donec dapibus. Duis at velit eu est congue elementum.",7/5/2021,59,1/6/2021,3,1
+CT0000004,Proforce Commercial Products,Randi Gutteridge,Praesent id massa id nisl venenatis lacinia. Aenean sit amet justo. Morbi ut odio.,1/27/2021,36,4/30/2021,4,1
+CT0000005,Guaifenesin,Winnie Gott,"Aliquam quis turpis eget elit sodales scelerisque. Mauris sit amet eros. Suspendisse accumsan tortor quis turpis.
 
 Sed ante. Vivamus tortor. Duis mattis egestas metus.
 
-Aenean fermentum. Donec ut mauris eget massa tempor convallis. Nulla neque libero, convallis eget, eleifend luctus, ultricies eu, nibh.",2021-09-24,73,2021-10-04,5
-6,Joints and Muscles Pain Relieving,Grace Lindenboim,Fusce consequat. Nulla nisl. Nunc nisl.,2021-06-25,98,2021-11-13,6
-7,LISINOPRIL AND HYDROCHLOROTHIAZIDE,Malorie Diggles,"Nam ultrices, libero non mattis pulvinar, nulla pede ullamcorper augue, a suscipit nulla elit ac nulla. Sed vel enim sit amet nunc viverra dapibus. Nulla suscipit ligula in lacus.
+Aenean fermentum. Donec ut mauris eget massa tempor convallis. Nulla neque libero, convallis eget, eleifend luctus, ultricies eu, nibh.",9/24/2021,73,10/4/2021,5,1
+KH0000001,Joints and Muscles Pain Relieving,Grace Lindenboim,Fusce consequat. Nulla nisl. Nunc nisl.,6/25/2021,98,11/13/2021,6,2
+KH0000002,LISINOPRIL AND HYDROCHLOROTHIAZIDE,Malorie Diggles,"Nam ultrices, libero non mattis pulvinar, nulla pede ullamcorper augue, a suscipit nulla elit ac nulla. Sed vel enim sit amet nunc viverra dapibus. Nulla suscipit ligula in lacus.
 
-Curabitur at ipsum ac tellus semper interdum. Mauris ullamcorper purus sit amet nulla. Quisque arcu libero, rutrum ac, lobortis vel, dapibus at, diam.",2021-11-20,19,2021-01-08,7
-8,Fentanyl Citrate,Suzi Ferrige,"Curabitur gravida nisi at nibh. In hac habitasse platea dictumst. Aliquam augue quam, sollicitudin vitae, consectetuer eget, rutrum at, lorem.
+Curabitur at ipsum ac tellus semper interdum. Mauris ullamcorper purus sit amet nulla. Quisque arcu libero, rutrum ac, lobortis vel, dapibus at, diam.",11/20/2021,19,1/8/2021,7,2
+KH0000003,Fentanyl Citrate,Suzi Ferrige,"Curabitur gravida nisi at nibh. In hac habitasse platea dictumst. Aliquam augue quam, sollicitudin vitae, consectetuer eget, rutrum at, lorem.
 
 Integer tincidunt ante vel ipsum. Praesent blandit lacinia erat. Vestibulum sed magna at nunc commodo placerat.
 
-Praesent blandit. Nam nulla. Integer pede justo, lacinia eget, tincidunt eget, tempus vel, pede.",2021-01-28,51,2021-10-01,8
-9,babies r us infants pain and fever,Aubrette Jacobowitz,"Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vivamus vestibulum sagittis sapien. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+Praesent blandit. Nam nulla. Integer pede justo, lacinia eget, tincidunt eget, tempus vel, pede.",1/28/2021,51,10/1/2021,8,2
+KH0000004,babies r us infants pain and fever,Aubrette Jacobowitz,"Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vivamus vestibulum sagittis sapien. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
 
-Etiam vel augue. Vestibulum rutrum rutrum neque. Aenean auctor gravida sem.",2021-02-21,39,2021-10-03,9
-10,Norethindrone Acetate,June Killner,"Maecenas leo odio, condimentum id, luctus nec, molestie sed, justo. Pellentesque viverra pede ac diam. Cras pellentesque volutpat dui.
+Etiam vel augue. Vestibulum rutrum rutrum neque. Aenean auctor gravida sem.",2/21/2021,39,10/3/2021,9,2
+KH0000005,Norethindrone Acetate,June Killner,"Maecenas leo odio, condimentum id, luctus nec, molestie sed, justo. Pellentesque viverra pede ac diam. Cras pellentesque volutpat dui.
 
 Maecenas tristique, est et tempus semper, est quam pharetra magna, ac consequat metus sapien ut nunc. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Mauris viverra diam vitae quam. Suspendisse potenti.
 
-Nullam porttitor lacus at turpis. Donec posuere metus vitae ipsum. Aliquam non mauris.",2021-01-11,94,2021-07-15,10
-11,Anti-Bacterial Hand Sanitizer,Corina Heynel,In congue. Etiam justo. Etiam pretium iaculis justo.,2021-01-05,75,2021-10-04,11
-12,Hydrogen Peroxide,Yale Craine,"Aenean lectus. Pellentesque eget nunc. Donec quis orci eget orci vehicula condimentum.
+Nullam porttitor lacus at turpis. Donec posuere metus vitae ipsum. Aliquam non mauris.",1/11/2021,94,7/15/2021,10,2
+KT0000001,Anti-Bacterial Hand Sanitizer,Corina Heynel,In congue. Etiam justo. Etiam pretium iaculis justo.,1/5/2021,75,10/4/2021,11,3
+KT0000002,Hydrogen Peroxide,Yale Craine,"Aenean lectus. Pellentesque eget nunc. Donec quis orci eget orci vehicula condimentum.
 
-Curabitur in libero ut massa volutpat convallis. Morbi odio odio, elementum eu, interdum eu, tincidunt in, leo. Maecenas pulvinar lobortis est.",2021-01-24,71,2021-12-08,12
-13,Glytone acne cleansing toner,Larry Davidou,Cras non velit nec nisi vulputate nonummy. Maecenas tincidunt lacus at velit. Vivamus vel nulla eget eros elementum pellentesque.,2021-05-06,47,2021-04-07,13
-14,napoleon PERDIS SHEER GENIUS LIQUID FOUNDATION BROAD SPECTRUM SPF 20 Look 3,Roberta Mattussevich,"Proin eu mi. Nulla ac enim. In tempor, turpis nec euismod scelerisque, quam turpis adipiscing lorem, vitae mattis nibh ligula nec sem.
+Curabitur in libero ut massa volutpat convallis. Morbi odio odio, elementum eu, interdum eu, tincidunt in, leo. Maecenas pulvinar lobortis est.",1/24/2021,71,12/8/2021,12,3
+KT0000003,Glytone acne cleansing toner,Larry Davidou,Cras non velit nec nisi vulputate nonummy. Maecenas tincidunt lacus at velit. Vivamus vel nulla eget eros elementum pellentesque.,5/6/2021,47,4/7/2021,13,3
+KT0000004,napoleon PERDIS SHEER GENIUS LIQUID FOUNDATION BROAD SPECTRUM SPF 20 Look 3,Roberta Mattussevich,"Proin eu mi. Nulla ac enim. In tempor, turpis nec euismod scelerisque, quam turpis adipiscing lorem, vitae mattis nibh ligula nec sem.
 
-Duis aliquam convallis nunc. Proin at turpis a pede posuere nonummy. Integer non velit.",2021-06-09,50,2021-12-31,14
-15,Diltiazem Hydrochloride,Adrianne Heffer,"Morbi porttitor lorem id ligula. Suspendisse ornare consequat lectus. In est risus, auctor sed, tristique in, tempus sit amet, sem.",2021-06-26,1,2021-12-19,15
-16,Ambien CR,Karola Getcliff,"Vestibulum ac est lacinia nisi venenatis tristique. Fusce congue, diam id ornare imperdiet, sapien urna pretium nisl, ut volutpat sapien arcu sed augue. Aliquam erat volutpat.
+Duis aliquam convallis nunc. Proin at turpis a pede posuere nonummy. Integer non velit.",6/9/2021,50,12/31/2021,14,3
+KT0000005,Diltiazem Hydrochloride,Adrianne Heffer,"Morbi porttitor lorem id ligula. Suspendisse ornare consequat lectus. In est risus, auctor sed, tristique in, tempus sit amet, sem.",6/26/2021,1,12/19/2021,15,3
+VH0000001,Ambien CR,Karola Getcliff,"Vestibulum ac est lacinia nisi venenatis tristique. Fusce congue, diam id ornare imperdiet, sapien urna pretium nisl, ut volutpat sapien arcu sed augue. Aliquam erat volutpat.
 
 In congue. Etiam justo. Etiam pretium iaculis justo.
 
-In hac habitasse platea dictumst. Etiam faucibus cursus urna. Ut tellus.",2021-10-04,91,2021-05-30,16
-17,Cardizem LA,Holli Haythorn,Integer tincidunt ante vel ipsum. Praesent blandit lacinia erat. Vestibulum sed magna at nunc commodo placerat.,2021-12-19,68,2021-11-15,17
-18,ROBINIA PSEUDOACACIA POLLEN,Shep Miliffe,"Phasellus in felis. Donec semper sapien a libero. Nam dui.
+In hac habitasse platea dictumst. Etiam faucibus cursus urna. Ut tellus.",10/4/2021,91,5/30/2021,16,4
+VH0000002,Cardizem LA,Holli Haythorn,Integer tincidunt ante vel ipsum. Praesent blandit lacinia erat. Vestibulum sed magna at nunc commodo placerat.,12/19/2021,68,11/15/2021,17,4
+VH0000003,ROBINIA PSEUDOACACIA POLLEN,Shep Miliffe,"Phasellus in felis. Donec semper sapien a libero. Nam dui.
 
 Proin leo odio, porttitor id, consequat in, consequat ut, nulla. Sed accumsan felis. Ut at dolor quis odio consequat varius.
 
-Integer ac leo. Pellentesque ultrices mattis odio. Donec vitae nisi.",2021-08-08,53,2021-02-27,18
-19,Vaporizing Chest,Les Treat,In congue. Etiam justo. Etiam pretium iaculis justo.,2021-10-11,12,2021-05-02,19
-20,Amlodipine besylate and benazepril hydrochloride,Rochette Fadden,"In sagittis dui vel nisl. Duis ac nibh. Fusce lacus purus, aliquet at, feugiat non, pretium quis, lectus.
+Integer ac leo. Pellentesque ultrices mattis odio. Donec vitae nisi.",8/8/2021,53,2/27/2021,18,4
+VH0000004,Vaporizing Chest,Les Treat,In congue. Etiam justo. Etiam pretium iaculis justo.,10/11/2021,12,5/2/2021,19,4
+VH0000005,Amlodipine besylate and benazepril hydrochloride,Rochette Fadden,"In sagittis dui vel nisl. Duis ac nibh. Fusce lacus purus, aliquet at, feugiat non, pretium quis, lectus.
 
 Suspendisse potenti. In eleifend quam a odio. In hac habitasse platea dictumst.
 
-Maecenas ut massa quis augue luctus tincidunt. Nulla mollis molestie lorem. Quisque ut erat.",2021-05-05,28,2021-08-06,20
-21,Metformin Hydrochloride,Lorita McGauhy,"Aenean lectus. Pellentesque eget nunc. Donec quis orci eget orci vehicula condimentum.
+Maecenas ut massa quis augue luctus tincidunt. Nulla mollis molestie lorem. Quisque ut erat.",5/5/2021,28,8/6/2021,20,4
+XH0000001,Metformin Hydrochloride,Lorita McGauhy,"Aenean lectus. Pellentesque eget nunc. Donec quis orci eget orci vehicula condimentum.
 
 Curabitur in libero ut massa volutpat convallis. Morbi odio odio, elementum eu, interdum eu, tincidunt in, leo. Maecenas pulvinar lobortis est.
 
-Phasellus sit amet erat. Nulla tempus. Vivamus in felis eu sapien cursus vestibulum.",2021-05-27,95,2021-01-08,21
-22,Alcoholism,Stephenie Gehrts,"Sed sagittis. Nam congue, risus semper porta volutpat, quam pede lobortis ligula, sit amet eleifend pede libero quis orci. Nullam molestie nibh in lectus.
+Phasellus sit amet erat. Nulla tempus. Vivamus in felis eu sapien cursus vestibulum.",5/27/2021,95,1/8/2021,21,5
+XH0000002,Alcoholism,Stephenie Gehrts,"Sed sagittis. Nam congue, risus semper porta volutpat, quam pede lobortis ligula, sit amet eleifend pede libero quis orci. Nullam molestie nibh in lectus.
 
-Pellentesque at nulla. Suspendisse potenti. Cras in purus eu magna vulputate luctus.",2021-05-24,85,2021-10-23,22
-23,Ultra-TechneKow,Drusilla Robarts,In quis justo. Maecenas rhoncus aliquam lacus. Morbi quis tortor id nulla ultrices aliquet.,2021-10-13,38,2021-01-19,23
-24,Benazepril Hydrochloride,Celia Hansel,"Nullam porttitor lacus at turpis. Donec posuere metus vitae ipsum. Aliquam non mauris.
+Pellentesque at nulla. Suspendisse potenti. Cras in purus eu magna vulputate luctus.",5/24/2021,85,10/23/2021,22,5
+XH0000003,Ultra-TechneKow,Drusilla Robarts,In quis justo. Maecenas rhoncus aliquam lacus. Morbi quis tortor id nulla ultrices aliquet.,10/13/2021,38,1/19/2021,23,5
+XH0000004,Benazepril Hydrochloride,Celia Hansel,"Nullam porttitor lacus at turpis. Donec posuere metus vitae ipsum. Aliquam non mauris.
 
 Morbi non lectus. Aliquam sit amet diam in magna bibendum imperdiet. Nullam orci pede, venenatis non, sodales sed, tincidunt eu, felis.
 
-Fusce posuere felis sed lacus. Morbi sem mauris, laoreet ut, rhoncus aliquet, pulvinar sed, nisl. Nunc rhoncus dui vel sem.",2021-10-29,39,2021-05-04,24
-25,Benazepril Hydrochloride,Koral Mathie,"Etiam vel augue. Vestibulum rutrum rutrum neque. Aenean auctor gravida sem.
+Fusce posuere felis sed lacus. Morbi sem mauris, laoreet ut, rhoncus aliquet, pulvinar sed, nisl. Nunc rhoncus dui vel sem.",10/29/2021,39,5/4/2021,24,5
+XH0000005,Benazepril Hydrochloride,Koral Mathie,"Etiam vel augue. Vestibulum rutrum rutrum neque. Aenean auctor gravida sem.
 
-Praesent id massa id nisl venenatis lacinia. Aenean sit amet justo. Morbi ut odio.",2021-09-30,68,2021-03-12,25
-26,Crest 3D White,Stepha Tarren,"Sed sagittis. Nam congue, risus semper porta volutpat, quam pede lobortis ligula, sit amet eleifend pede libero quis orci. Nullam molestie nibh in lectus.
+Praesent id massa id nisl venenatis lacinia. Aenean sit amet justo. Morbi ut odio.",9/30/2021,68,3/12/2021,25,5
+LS0000001,Crest 3D White,Stepha Tarren,"Sed sagittis. Nam congue, risus semper porta volutpat, quam pede lobortis ligula, sit amet eleifend pede libero quis orci. Nullam molestie nibh in lectus.
 
 Pellentesque at nulla. Suspendisse potenti. Cras in purus eu magna vulputate luctus.
 
-Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vivamus vestibulum sagittis sapien. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.",2021-10-21,88,2021-01-12,26
-27,Rabbit Hair,Kristyn Niese,"Quisque porta volutpat erat. Quisque erat eros, viverra eget, congue eget, semper rutrum, nulla. Nunc purus.
+Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vivamus vestibulum sagittis sapien. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.",10/21/2021,88,1/12/2021,26,6
+LS0000002,Rabbit Hair,Kristyn Niese,"Quisque porta volutpat erat. Quisque erat eros, viverra eget, congue eget, semper rutrum, nulla. Nunc purus.
 
-Phasellus in felis. Donec semper sapien a libero. Nam dui.",2021-12-16,9,2021-10-22,27
-28,Cetacaine Anesthetic,Lorie Tape,"Duis bibendum, felis sed interdum venenatis, turpis enim blandit mi, in porttitor pede justo eu massa. Donec dapibus. Duis at velit eu est congue elementum.",2021-10-13,74,2021-07-13,28
-29,Earwax Removal Kit,Chrissy Stark,"Phasellus in felis. Donec semper sapien a libero. Nam dui.
+Phasellus in felis. Donec semper sapien a libero. Nam dui.",12/16/2021,9,10/22/2021,27,6
+LS0000003,Cetacaine Anesthetic,Lorie Tape,"Duis bibendum, felis sed interdum venenatis, turpis enim blandit mi, in porttitor pede justo eu massa. Donec dapibus. Duis at velit eu est congue elementum.",10/13/2021,74,7/13/2021,28,6
+LS0000004,Earwax Removal Kit,Chrissy Stark,"Phasellus in felis. Donec semper sapien a libero. Nam dui.
 
-Proin leo odio, porttitor id, consequat in, consequat ut, nulla. Sed accumsan felis. Ut at dolor quis odio consequat varius.",2021-05-12,40,2021-08-28,29
-30,Premium Gold Mineral BB,Kendricks Kibbel,"Phasellus in felis. Donec semper sapien a libero. Nam dui.
+Proin leo odio, porttitor id, consequat in, consequat ut, nulla. Sed accumsan felis. Ut at dolor quis odio consequat varius.",5/12/2021,40,8/28/2021,29,6
+LS0000005,Premium Gold Mineral BB,Kendricks Kibbel,"Phasellus in felis. Donec semper sapien a libero. Nam dui.
 
 Proin leo odio, porttitor id, consequat in, consequat ut, nulla. Sed accumsan felis. Ut at dolor quis odio consequat varius.
 
-Integer ac leo. Pellentesque ultrices mattis odio. Donec vitae nisi.",2021-10-16,51,2021-11-17,30
-31,BRYONIA ALBA,Kalie McQuilkin,"Maecenas ut massa quis augue luctus tincidunt. Nulla mollis molestie lorem. Quisque ut erat.
+Integer ac leo. Pellentesque ultrices mattis odio. Donec vitae nisi.",10/16/2021,51,11/17/2021,30,6
+GT0000001,BRYONIA ALBA,Kalie McQuilkin,"Maecenas ut massa quis augue luctus tincidunt. Nulla mollis molestie lorem. Quisque ut erat.
 
 Curabitur gravida nisi at nibh. In hac habitasse platea dictumst. Aliquam augue quam, sollicitudin vitae, consectetuer eget, rutrum at, lorem.
 
-Integer tincidunt ante vel ipsum. Praesent blandit lacinia erat. Vestibulum sed magna at nunc commodo placerat.",2021-01-10,3,2021-02-08,31
-32,Alcohol Prep pad,Pyotr Buckbee,"Praesent blandit. Nam nulla. Integer pede justo, lacinia eget, tincidunt eget, tempus vel, pede.",2021-11-04,91,2021-08-14,32
-33,Diovan HCT,Milton Tomlins,"Fusce posuere felis sed lacus. Morbi sem mauris, laoreet ut, rhoncus aliquet, pulvinar sed, nisl. Nunc rhoncus dui vel sem.
+Integer tincidunt ante vel ipsum. Praesent blandit lacinia erat. Vestibulum sed magna at nunc commodo placerat.",1/10/2021,3,2/8/2021,31,7
+GT0000002,Alcohol Prep pad,Pyotr Buckbee,"Praesent blandit. Nam nulla. Integer pede justo, lacinia eget, tincidunt eget, tempus vel, pede.",11/4/2021,91,8/14/2021,32,7
+GT0000003,Diovan HCT,Milton Tomlins,"Fusce posuere felis sed lacus. Morbi sem mauris, laoreet ut, rhoncus aliquet, pulvinar sed, nisl. Nunc rhoncus dui vel sem.
 
 Sed sagittis. Nam congue, risus semper porta volutpat, quam pede lobortis ligula, sit amet eleifend pede libero quis orci. Nullam molestie nibh in lectus.
 
-Pellentesque at nulla. Suspendisse potenti. Cras in purus eu magna vulputate luctus.",2021-07-22,76,2021-05-31,33
-34,Morphine Sulfate,Charmian Heggadon,Sed ante. Vivamus tortor. Duis mattis egestas metus.,2021-01-21,100,2021-03-19,34
-35,Cleanize,Arte McHale,"Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vivamus vestibulum sagittis sapien. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+Pellentesque at nulla. Suspendisse potenti. Cras in purus eu magna vulputate luctus.",7/22/2021,76,5/31/2021,33,7
+GT0000004,Morphine Sulfate,Charmian Heggadon,Sed ante. Vivamus tortor. Duis mattis egestas metus.,1/21/2021,100,3/19/2021,34,7
+GT0000005,Cleanize,Arte McHale,"Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vivamus vestibulum sagittis sapien. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
 
 Etiam vel augue. Vestibulum rutrum rutrum neque. Aenean auctor gravida sem.
 
-Praesent id massa id nisl venenatis lacinia. Aenean sit amet justo. Morbi ut odio.",2021-06-26,60,2021-12-24,35
-36,Strattera,Georgianna Gawne,"In sagittis dui vel nisl. Duis ac nibh. Fusce lacus purus, aliquet at, feugiat non, pretium quis, lectus.
+Praesent id massa id nisl venenatis lacinia. Aenean sit amet justo. Morbi ut odio.",6/26/2021,60,12/24/2021,35,7
+GT0000006,Strattera,Georgianna Gawne,"In sagittis dui vel nisl. Duis ac nibh. Fusce lacus purus, aliquet at, feugiat non, pretium quis, lectus.
 
 Suspendisse potenti. In eleifend quam a odio. In hac habitasse platea dictumst.
 
-Maecenas ut massa quis augue luctus tincidunt. Nulla mollis molestie lorem. Quisque ut erat.",2021-08-19,32,2021-06-02,36
-37,COLGATE 2IN1,Sileas Perryn,"Nullam porttitor lacus at turpis. Donec posuere metus vitae ipsum. Aliquam non mauris.
+Maecenas ut massa quis augue luctus tincidunt. Nulla mollis molestie lorem. Quisque ut erat.",8/19/2021,32,6/2/2021,36,7
+GT0000007,COLGATE 2IN1,Sileas Perryn,"Nullam porttitor lacus at turpis. Donec posuere metus vitae ipsum. Aliquam non mauris.
 
-Morbi non lectus. Aliquam sit amet diam in magna bibendum imperdiet. Nullam orci pede, venenatis non, sodales sed, tincidunt eu, felis.",2021-02-12,25,2021-05-03,37
-38,Prometrium,Emilia Claibourn,Phasellus in felis. Donec semper sapien a libero. Nam dui.,2021-04-18,44,2021-07-02,38
-39,Dr. Scholls,Brit Benthall,Integer ac leo. Pellentesque ultrices mattis odio. Donec vitae nisi.,2021-03-18,18,2021-03-10,39
-40,Cyzone,Valry Jeste,"Quisque porta volutpat erat. Quisque erat eros, viverra eget, congue eget, semper rutrum, nulla. Nunc purus.
+Morbi non lectus. Aliquam sit amet diam in magna bibendum imperdiet. Nullam orci pede, venenatis non, sodales sed, tincidunt eu, felis.",2/12/2021,25,5/3/2021,37,7
+GT0000008,Prometrium,Emilia Claibourn,Phasellus in felis. Donec semper sapien a libero. Nam dui.,4/18/2021,44,7/2/2021,38,7
+GT0000009,Dr. Scholls,Brit Benthall,Integer ac leo. Pellentesque ultrices mattis odio. Donec vitae nisi.,3/18/2021,18,3/10/2021,39,7
+GT0000010,Cyzone,Valry Jeste,"Quisque porta volutpat erat. Quisque erat eros, viverra eget, congue eget, semper rutrum, nulla. Nunc purus.
 
 Phasellus in felis. Donec semper sapien a libero. Nam dui.
 
-Proin leo odio, porttitor id, consequat in, consequat ut, nulla. Sed accumsan felis. Ut at dolor quis odio consequat varius.",2021-07-14,97,2021-11-07,40
-41,"Pollens - Grasses, Bahia Grass Paspalum notatum",Gabbi Webben,Nullam sit amet turpis elementum ligula vehicula consequat. Morbi a ipsum. Integer a nibh.,2021-10-22,37,2021-05-25,41
-42,Azithromycin,Amie Micah,"Proin interdum mauris non ligula pellentesque ultrices. Phasellus id sapien in sapien iaculis congue. Vivamus metus arcu, adipiscing molestie, hendrerit at, vulputate vitae, nisl.",2021-07-14,41,2021-04-30,42
-43,Bio Impatiens,Gertrude Fyldes,"Fusce posuere felis sed lacus. Morbi sem mauris, laoreet ut, rhoncus aliquet, pulvinar sed, nisl. Nunc rhoncus dui vel sem.
+Proin leo odio, porttitor id, consequat in, consequat ut, nulla. Sed accumsan felis. Ut at dolor quis odio consequat varius.",7/14/2021,97,11/7/2021,40,7
+TT0000001,"Pollens - Grasses, Bahia Grass Paspalum notatum",Gabbi Webben,Nullam sit amet turpis elementum ligula vehicula consequat. Morbi a ipsum. Integer a nibh.,10/22/2021,37,5/25/2021,41,8
+TT0000002,Azithromycin,Amie Micah,"Proin interdum mauris non ligula pellentesque ultrices. Phasellus id sapien in sapien iaculis congue. Vivamus metus arcu, adipiscing molestie, hendrerit at, vulputate vitae, nisl.",7/14/2021,41,4/30/2021,42,8
+TT0000003,Bio Impatiens,Gertrude Fyldes,"Fusce posuere felis sed lacus. Morbi sem mauris, laoreet ut, rhoncus aliquet, pulvinar sed, nisl. Nunc rhoncus dui vel sem.
 
-Sed sagittis. Nam congue, risus semper porta volutpat, quam pede lobortis ligula, sit amet eleifend pede libero quis orci. Nullam molestie nibh in lectus.",2021-02-19,73,2021-08-21,43
-44,Estradiol / Norethindrone Acetate,Natalya Bucknell,"In hac habitasse platea dictumst. Morbi vestibulum, velit id pretium iaculis, diam erat fermentum justo, nec condimentum neque sapien placerat ante. Nulla justo.",2021-05-27,77,2021-02-04,44
-45,Sancuso,Gracia Witcher,"Fusce posuere felis sed lacus. Morbi sem mauris, laoreet ut, rhoncus aliquet, pulvinar sed, nisl. Nunc rhoncus dui vel sem.",2021-11-08,78,2021-01-26,45
-46,THE YEON STYLE Y LONG WEAR PERFECT FIT BB,Jamesy MacConneely,"Quisque id justo sit amet sapien dignissim vestibulum. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nulla dapibus dolor vel est. Donec odio justo, sollicitudin ut, suscipit a, feugiat et, eros.",2021-07-12,69,2021-08-19,46
-47,ATORVASTATIN CALCIUM,Tyson Nind,"Proin interdum mauris non ligula pellentesque ultrices. Phasellus id sapien in sapien iaculis congue. Vivamus metus arcu, adipiscing molestie, hendrerit at, vulputate vitae, nisl.
+Sed sagittis. Nam congue, risus semper porta volutpat, quam pede lobortis ligula, sit amet eleifend pede libero quis orci. Nullam molestie nibh in lectus.",2/19/2021,73,8/21/2021,43,8
+TT0000004,Estradiol / Norethindrone Acetate,Natalya Bucknell,"In hac habitasse platea dictumst. Morbi vestibulum, velit id pretium iaculis, diam erat fermentum justo, nec condimentum neque sapien placerat ante. Nulla justo.",5/27/2021,77,2/4/2021,44,8
+TT0000005,Sancuso,Gracia Witcher,"Fusce posuere felis sed lacus. Morbi sem mauris, laoreet ut, rhoncus aliquet, pulvinar sed, nisl. Nunc rhoncus dui vel sem.",11/8/2021,78,1/26/2021,45,8
+TT0000006,THE YEON STYLE Y LONG WEAR PERFECT FIT BB,Jamesy MacConneely,"Quisque id justo sit amet sapien dignissim vestibulum. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nulla dapibus dolor vel est. Donec odio justo, sollicitudin ut, suscipit a, feugiat et, eros.",7/12/2021,69,8/19/2021,46,8
+TT0000007,ATORVASTATIN CALCIUM,Tyson Nind,"Proin interdum mauris non ligula pellentesque ultrices. Phasellus id sapien in sapien iaculis congue. Vivamus metus arcu, adipiscing molestie, hendrerit at, vulputate vitae, nisl.
 
-Aenean lectus. Pellentesque eget nunc. Donec quis orci eget orci vehicula condimentum.",2021-04-20,29,2021-04-17,47
-48,Micro-Guard,Jereme Tafani,"Donec diam neque, vestibulum eget, vulputate ut, ultrices vel, augue. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec pharetra, magna vestibulum aliquet ultrices, erat tortor sollicitudin mi, sit amet lobortis sapien sapien non mi. Integer ac neque.
+Aenean lectus. Pellentesque eget nunc. Donec quis orci eget orci vehicula condimentum.",4/20/2021,29,4/17/2021,47,8
+TT0000008,Micro-Guard,Jereme Tafani,"Donec diam neque, vestibulum eget, vulputate ut, ultrices vel, augue. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec pharetra, magna vestibulum aliquet ultrices, erat tortor sollicitudin mi, sit amet lobortis sapien sapien non mi. Integer ac neque.
 
 Duis bibendum. Morbi non quam nec dui luctus rutrum. Nulla tellus.
 
-In sagittis dui vel nisl. Duis ac nibh. Fusce lacus purus, aliquet at, feugiat non, pretium quis, lectus.",2021-07-10,5,2021-06-28,48
-49,Childrens Mucinex,Adrienne Richten,"Fusce posuere felis sed lacus. Morbi sem mauris, laoreet ut, rhoncus aliquet, pulvinar sed, nisl. Nunc rhoncus dui vel sem.",2021-01-03,92,2021-12-22,49
-50,Ceftriaxone Sodium,Veriee Mocher,"Vestibulum quam sapien, varius ut, blandit non, interdum in, ante. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Duis faucibus accumsan odio. Curabitur convallis.",2021-01-07,84,2021-08-02,50
+In sagittis dui vel nisl. Duis ac nibh. Fusce lacus purus, aliquet at, feugiat non, pretium quis, lectus.",7/10/2021,5,6/28/2021,48,8
+TT0000009,Childrens Mucinex,Adrienne Richten,"Fusce posuere felis sed lacus. Morbi sem mauris, laoreet ut, rhoncus aliquet, pulvinar sed, nisl. Nunc rhoncus dui vel sem.",1/3/2021,92,12/22/2021,49,8
+TT0000010,Ceftriaxone Sodium,Veriee Mocher,"Vestibulum quam sapien, varius ut, blandit non, interdum in, ante. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Duis faucibus accumsan odio. Curabitur convallis.",1/7/2021,84,8/2/2021,50,8

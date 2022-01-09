@@ -82,6 +82,10 @@ namespace Client.Presentation
             this.Display_Name_Child_Label = new System.Windows.Forms.Label();
             this.RegisterAdultValidation = new Client.Partials.Validation();
             this.RegisterChildValidation = new Client.Partials.Validation();
+            this.Nationality_Child = new System.Windows.Forms.TextBox();
+            this.Nationality_Child_Label = new System.Windows.Forms.Label();
+            this.Nation_Child = new System.Windows.Forms.TextBox();
+            this.Nation_Child_Label = new System.Windows.Forms.Label();
             this.UserName.SuspendLayout();
             this.AdultRegister.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Avatar)).BeginInit();
@@ -368,6 +372,10 @@ namespace Client.Presentation
             // 
             // ChildRegister
             // 
+            this.ChildRegister.Controls.Add(this.Nationality_Child);
+            this.ChildRegister.Controls.Add(this.Nationality_Child_Label);
+            this.ChildRegister.Controls.Add(this.Nation_Child);
+            this.ChildRegister.Controls.Add(this.Nation_Child_Label);
             this.ChildRegister.Controls.Add(this.Birth_Date_Child);
             this.ChildRegister.Controls.Add(this.SignupChild);
             this.ChildRegister.Controls.Add(this.Protector);
@@ -404,7 +412,7 @@ namespace Client.Presentation
             // 
             // SignupChild
             // 
-            this.SignupChild.Location = new System.Drawing.Point(235, 273);
+            this.SignupChild.Location = new System.Drawing.Point(234, 331);
             this.SignupChild.Name = "SignupChild";
             this.SignupChild.Size = new System.Drawing.Size(313, 33);
             this.SignupChild.TabIndex = 53;
@@ -578,6 +586,38 @@ namespace Client.Presentation
             this.Display_Name_Child_Label.TabIndex = 29;
             this.Display_Name_Child_Label.Text = "Tên Người dùng";
             // 
+            // Nationality_Child
+            // 
+            this.Nationality_Child.Location = new System.Drawing.Point(482, 246);
+            this.Nationality_Child.Name = "Nationality_Child";
+            this.Nationality_Child.Size = new System.Drawing.Size(232, 20);
+            this.Nationality_Child.TabIndex = 57;
+            // 
+            // Nationality_Child_Label
+            // 
+            this.Nationality_Child_Label.AutoSize = true;
+            this.Nationality_Child_Label.Location = new System.Drawing.Point(419, 249);
+            this.Nationality_Child_Label.Name = "Nationality_Child_Label";
+            this.Nationality_Child_Label.Size = new System.Drawing.Size(57, 13);
+            this.Nationality_Child_Label.TabIndex = 58;
+            this.Nationality_Child_Label.Text = "Quốc Tịch";
+            // 
+            // Nation_Child
+            // 
+            this.Nation_Child.Location = new System.Drawing.Point(482, 206);
+            this.Nation_Child.Name = "Nation_Child";
+            this.Nation_Child.Size = new System.Drawing.Size(232, 20);
+            this.Nation_Child.TabIndex = 55;
+            // 
+            // Nation_Child_Label
+            // 
+            this.Nation_Child_Label.AutoSize = true;
+            this.Nation_Child_Label.Location = new System.Drawing.Point(427, 209);
+            this.Nation_Child_Label.Name = "Nation_Child_Label";
+            this.Nation_Child_Label.Size = new System.Drawing.Size(49, 13);
+            this.Nation_Child_Label.TabIndex = 56;
+            this.Nation_Child_Label.Text = "Dân Tộc";
+            // 
             // Register
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -657,6 +697,10 @@ namespace Client.Presentation
         private System.Windows.Forms.Label Degree_Label;
         private Partials.Validation RegisterAdultValidation;
         private Partials.Validation RegisterChildValidation;
+        private System.Windows.Forms.TextBox Nationality_Child;
+        private System.Windows.Forms.Label Nationality_Child_Label;
+        private System.Windows.Forms.TextBox Nation_Child;
+        private System.Windows.Forms.Label Nation_Child_Label;
     }
 }
 

@@ -13,7 +13,7 @@ namespace Server.DAO
     public class TagDAO : DAO<TagDTO>
     {
         public static TagDAO instance = new TagDAO();
-        public override string table => "tags";
+        public override string table => "Muc";
 
         public override bool delete(string key)
         {

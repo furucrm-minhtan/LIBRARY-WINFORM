@@ -13,7 +13,7 @@ namespace Server.DAO
     public class BookDAO : DAO<BookDTO>
     {
         public static BookDAO instance = new BookDAO();
-        public override string table => "books";
+        public override string table => "Sach";
 
         public override bool delete(string key)
         {

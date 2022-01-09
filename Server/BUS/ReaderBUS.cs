@@ -37,7 +37,7 @@ namespace Server.BUS
             try
             {
                 string password = Helpers.getRandomString(10);
-                data.Password = Helpers.hashPassword(Helpers.getRandomString(10));
+                data.Password = Helpers.hashPassword(password);
                 if (ReaderDAO.instance.insert(data))
                 {
                     mail.setBody($"mã đọc giả: {data.MADG} \npassword: {password}");

@@ -15,7 +15,7 @@ namespace Server.DAO
     public class ReaderDAO : DAO<ReaderDTO>
     {
         public static ReaderDAO instance = new ReaderDAO();
-        public override string table => "readers";
+        public override string table => "DocGia";
 
         public override bool delete(string key)
         {

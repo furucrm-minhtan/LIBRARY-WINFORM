@@ -42,13 +42,14 @@ namespace Client.Presentation
                 if(!String.IsNullOrEmpty(filePath))
                 {
                     Avatar.Image.Dispose();
-                    Helpers.copyFile(filePath, data.Avatar);
+                    //Helpers.copyFile(filePath, data.Avatar);
+                    data.Avatar = Helpers.imageToBase64(filePath);
                 }
                 if (bus.store(data))
                 {
                     MessageBox.Show("Tạo Tài Khoản Thành Công");
                 }
-                Helpers.removeFile(data.Avatar);
+                //Helpers.removeFile(data.Avatar);
             }
             catch(Exception ex)
             {
@@ -73,7 +74,8 @@ namespace Client.Presentation
                 if (!String.IsNullOrEmpty(filePath))
                 {
                     Child_Avatar.Image.Dispose();
-                    Helpers.copyFile(filePath, data.Avatar);
+                    //Helpers.copyFile(filePath, data.Avatar);
+                    data.Avatar = Helpers.imageToBase64(filePath);
                 }
                 
                 if (bus.store(data))
@@ -103,7 +105,7 @@ namespace Client.Presentation
             reader.Nationality = Nationality.Text;
             reader.Degree = Degree.Text;
             reader.Type = "Adult";
-            reader.Avatar = Helpers.generateDestinationPathImage(Helpers.getUnixTime().ToString(), Path.GetExtension(filePath));
+            //reader.Avatar = Helpers.generateDestinationPathImage(Helpers.getUnixTime().ToString(), Path.GetExtension(filePath));
 
             return reader;
         }
@@ -118,9 +120,11 @@ namespace Client.Presentation
             reader.PhoneNumber = Phone_Child.Text;
             reader.School = School.Text;
             reader.Class = Class.Text;
+            reader.Nation = Nation_Child.Text;
+            reader.Nationality = Nationality_Child.Text;
             reader.Protector = Protector.SelectedValue.ToString();
             reader.Type = "Child";
-            reader.Avatar = Helpers.generateDestinationPathImage(Helpers.getUnixTime().ToString(), Path.GetExtension(filePath));
+            //reader.Avatar = Helpers.generateDestinationPathImage(Helpers.getUnixTime().ToString(), Path.GetExtension(filePath));
 
             return reader;
         }
@@ -228,7 +232,7 @@ namespace Client.Presentation
                                         },
                                         {
                                             "length",
-                                            "255"
+                                            "20"
                                         }
                                     }
                                 )
@@ -268,7 +272,7 @@ namespace Client.Presentation
                                         },
                                         {
                                             "length",
-                                            "10"
+                                            "100"
                                         }
                                     }
                                 )
@@ -334,7 +338,7 @@ namespace Client.Presentation
                                         },
                                         {
                                             "length",
-                                            "11"
+                                            "15"
                                         }
                                     }
                                 )
@@ -361,7 +365,7 @@ namespace Client.Presentation
                                         },
                                         {
                                             "length",
-                                            "11"
+                                            "10"
                                         }
                                     }
                                 )
@@ -442,7 +446,7 @@ namespace Client.Presentation
                                         },
                                         {
                                             "length",
-                                            "10"
+                                            "20"
                                         }
                                     }
                                 )
@@ -469,7 +473,7 @@ namespace Client.Presentation
                                         },
                                         {
                                             "length",
-                                            "20"
+                                            "10"
                                         }
                                     }
                                 )
@@ -542,7 +546,7 @@ namespace Client.Presentation
                                         },
                                         {
                                             "length",
-                                            "255"
+                                            "20"
                                         }
                                     }
                                 )
@@ -582,7 +586,7 @@ namespace Client.Presentation
                                         },
                                         {
                                             "length",
-                                            "10"
+                                            "100"
                                         }
                                     }
                                 )
@@ -648,7 +652,61 @@ namespace Client.Presentation
                                         },
                                         {
                                             "length",
-                                            "11"
+                                            "10"
+                                        }
+                                    }
+                                )
+                            }
+                        },
+                    }
+                },
+                {
+                    "Nation",
+                    new InputValidationSetting
+                    {
+                        fieldName = "Nation",
+                        errorMessages = new Dictionary<ErrorType, string>
+                        {
+                            {
+                                ErrorType.Length,
+                                CustomLabel.format(
+                                    "length",
+                                    new Dictionary<string, string>
+                                    {
+                                        {
+                                            "fieldName",
+                                            Nation_Label.Text
+                                        },
+                                        {
+                                            "length",
+                                            "10"
+                                        }
+                                    }
+                                )
+                            }
+                        },
+                    }
+                },
+                {
+                    "Nationality",
+                    new InputValidationSetting
+                    {
+                        fieldName = "Nationality",
+                        errorMessages = new Dictionary<ErrorType, string>
+                        {
+                            {
+                                ErrorType.Length,
+                                CustomLabel.format(
+                                    "length",
+                                    new Dictionary<string, string>
+                                    {
+                                        {
+                                            "fieldName",
+                                            Nationality_Label.Text
+                                        },
+                                        {
+                                            "length",
+                                            "10"
                                         }
                                     }
                                 )
@@ -675,7 +733,7 @@ namespace Client.Presentation
                                         },
                                         {
                                             "length",
-                                            "50"
+                                            "30"
                                         }
                                     }
                                 )
@@ -702,7 +760,7 @@ namespace Client.Presentation
                                         },
                                         {
                                             "length",
-                                            "10"
+                                            "5"
                                         }
                                     }
                                 )
