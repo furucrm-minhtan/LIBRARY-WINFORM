@@ -56,11 +56,47 @@
       <DependentUpon>Validation.cs</DependentUpon>
     </Compile>
     <Compile Include="Presentation\BitmapImage.cs" />
+    <Compile Include="Presentation\ChinhSuaThongTin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentation\ChinhSuaThongTin.Designer.cs">
+      <DependentUpon>ChinhSuaThongTin.cs</DependentUpon>
+    </Compile>
     <Compile Include="Presentation\DangNhap.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Presentation\DangNhap.Designer.cs">
       <DependentUpon>DangNhap.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\DoiMatKhau.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentation\DoiMatKhau.Designer.cs">
+      <DependentUpon>DoiMatKhau.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\GiaHanThe.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentation\GiaHanThe.Designer.cs">
+      <DependentUpon>GiaHanThe.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\NhapMaXacNhan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentation\NhapMaXacNhan.Designer.cs">
+      <DependentUpon>NhapMaXacNhan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\QuanLyThongTin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentation\QuanLyThongTin.Designer.cs">
+      <DependentUpon>QuanLyThongTin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\QuenMatKhau.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentation\QuenMatKhau.Designer.cs">
+      <DependentUpon>QuenMatKhau.cs</DependentUpon>
     </Compile>
     <Compile Include="Presentation\Register.cs">
       <SubType>Form</SubType>
@@ -84,8 +120,26 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Utils\Helpers.cs" />
     <Compile Include="Utils\CustomLabel.cs" />
+    <EmbeddedResource Include="Presentation\ChinhSuaThongTin.resx">
+      <DependentUpon>ChinhSuaThongTin.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Presentation\DangNhap.resx">
       <DependentUpon>DangNhap.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentation\DoiMatKhau.resx">
+      <DependentUpon>DoiMatKhau.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentation\GiaHanThe.resx">
+      <DependentUpon>GiaHanThe.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentation\NhapMaXacNhan.resx">
+      <DependentUpon>NhapMaXacNhan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentation\QuanLyThongTin.resx">
+      <DependentUpon>QuanLyThongTin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentation\QuenMatKhau.resx">
+      <DependentUpon>QuenMatKhau.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentation\Register.resx">
       <DependentUpon>Register.cs</DependentUpon>
